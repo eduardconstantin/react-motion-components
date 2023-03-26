@@ -3,7 +3,7 @@ import { ComponentStory, ComponentMeta } from "@storybook/react";
 import { Button } from "./Button";
 
 export default {
-  title: "Buttons/Framer Button",
+  title: "Components/Buttons/Framer AI Button",
   parameters: {
     layout: "centered",
     backgrounds: {
