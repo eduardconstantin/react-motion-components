@@ -1,4 +1,5 @@
 import { Variants } from "framer-motion";
+import { RANDOM } from "../helpers";
 
 export const buttonAnim: Variants = {
   init: {
@@ -113,7 +114,7 @@ export const highlightAnim: Variants = {
     },
   },
 };
-const RANDOM = (min: number, max: number) => Math.floor(Math.random() * (max - min + 1) + min);
+
 export const sparkleAnim: Variants = {
   init: (i: number) => ({
     rotateZ: 0,
