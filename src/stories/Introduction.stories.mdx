@@ -1,12 +1,10 @@
-import { Meta } from "@storybook/addon-docs"
-import Code from "./assets/code-brackets.svg"
-import Colors from "./assets/colors.svg"
-import Comments from "./assets/comments.svg"
-import Direction from "./assets/direction.svg"
-import Flow from "./assets/flow.svg"
-import Plugin from "./assets/plugin.svg"
-import Repo from "./assets/repo.svg"
-import StackAlt from "./assets/stackalt.svg"
+import { Meta } from "@storybook/addon-docs";
+import Portfolio from "./assets/portfolio.svg";
+import Youtube from "./assets/youtube.svg";
+import Github from "./assets/github.svg";
+import Dribbble from "./assets/dribbble.svg";
+import Repo from "./assets/repo.svg";
+import Twitter from "./assets/twitter.svg";
 
 <Meta title="Welcome/Introduction" />
 
@@ -27,7 +25,7 @@ import StackAlt from "./assets/stackalt.svg"
     .link-list {
       display: grid;
       grid-template-columns: 1fr;
-      grid-template-rows: 1fr 1fr;
+      grid-template-rows: 1fr;
       row-gap: 10px;
     }
 
@@ -114,97 +112,62 @@ import StackAlt from "./assets/stackalt.svg"
   `}
 </style>
 
-# Welcome to Storybook
+# Welcome to React Motion Components
 
-Storybook helps you build UI components in isolation from your app's business logic, data, and context.
-That makes it easy to develop hard-to-reach states. Save these UI states as **stories** to revisit during development, testing, or QA.
+React Motion Components is the home for my custom React components that I have created for various purposes and animated
+with Framer Motion, a motion library for React. Some of these components are ready-made to be used in projects, and some
+of them are concepts that I have experimented with and learned from.
 
-Browse example stories now by navigating to them in the sidebar.
-View their code in the `stories` directory to learn how they work.
-We recommend building UIs with a [**component-driven**](https://componentdriven.org) process starting with atomic components and ending with pages.
+React Motion Components is an open source project that welcomes contributions and feedback from the community. If you
+find any issues or have any suggestions, please feel free to open an issue or a pull request on GitHub.
 
-<div className="subheading">Configure</div>
-
-<div className="link-list">
-  <a
-    className="link-item"
-    href="https://storybook.js.org/docs/react/addons/addon-types"
-    target="_blank"
-  >
-    <img src={Plugin} alt="plugin" />
-    <span>
-      <strong>Presets for popular tools</strong>
-      Easy setup for TypeScript, SCSS and more.
-    </span>
-  </a>
-  <a
-    className="link-item"
-    href="https://storybook.js.org/docs/react/configure/webpack"
-    target="_blank"
-  >
-    <img src={StackAlt} alt="Build" />
-    <span>
-      <strong>Build configuration</strong>
-      How to customize webpack and Babel
-    </span>
-  </a>
-  <a
-    className="link-item"
-    href="https://storybook.js.org/docs/react/configure/styling-and-css"
-    target="_blank"
-  >
-    <img src={Colors} alt="colors" />
-    <span>
-      <strong>Styling</strong>
-      How to load and configure CSS libraries
-    </span>
-  </a>
-  <a
-    className="link-item"
-    href="https://storybook.js.org/docs/react/get-started/setup#configure-storybook-for-your-stack"
-    target="_blank"
-  >
-    <img src={Flow} alt="flow" />
-    <span>
-      <strong>Data</strong>
-      Providers and mocking for data libraries
-    </span>
-  </a>
-</div>
-
-<div className="subheading">Learn</div>
+<div className="subheading">Discover</div>
 
 <div className="link-list">
-  <a className="link-item" href="https://storybook.js.org/docs" target="_blank">
+  <a className="link-item" href="https://github.com/eduardconstantin/react-motion-components" target="_blank">
     <img src={Repo} alt="repo" />
     <span>
-      <strong>Storybook documentation</strong>
-      Configure, customize, and extend
-    </span>
-  </a>
-  <a className="link-item" href="https://storybook.js.org/tutorials/" target="_blank">
-    <img src={Direction} alt="direction" />
-    <span>
-      <strong>In-depth guides</strong>
-      Best practices from leading teams
-    </span>
-  </a>
-  <a className="link-item" href="https://github.com/storybookjs/storybook" target="_blank">
-    <img src={Code} alt="code" />
-    <span>
       <strong>GitHub project</strong>
-      View the source and add issues
+      Check the source code and add issues
     </span>
   </a>
-  <a className="link-item" href="https://discord.gg/storybook" target="_blank">
-    <img src={Comments} alt="comments" />
+  <a className="link-item" href="https://github.com/eduardconstantin" target="_blank">
+    <img src={Github} alt="github" />
     <span>
-      <strong>Discord chat</strong>
-      Chat with maintainers and the community
+      <strong>Github</strong>
+      View the rest of open source projects I work on
     </span>
   </a>
 </div>
 
-<div className="tip-wrapper">
-  <span className="tip">Tip</span>Edit the Markdown in <code>stories/Introduction.stories.mdx</code>
+<div className="subheading">Get in touch</div>
+
+<div className="link-list">
+  <a className="link-item" href="https://eduardconstantin.github.io" target="_blank">
+    <img src={Portfolio} alt="portfolio" />
+    <span>
+      <strong>Personal portfolio</strong>I have one of these too
+    </span>
+  </a>
+  <a className="link-item" href="https://dribbble.com/Eduard26" target="_blank">
+    <img src={Dribbble} alt="dribbble" />
+    <span>
+      <strong>Dribbble</strong>
+      Check out my dribbble shots
+    </span>
+  </a>
+  <a className="link-item" href="https://twitter.com/_Eduard26" target="_blank">
+    <img src={Twitter} alt="twitter" />
+    <span>
+      <strong>Twitter</strong>
+      Following Mr. Tweet
+    </span>
+  </a>
+  <a className="link-item" href="https://www.youtube.com/channel/UC8sXMbniXCSDrbbLXev4nsQ" target="_blank">
+    <img src={Youtube} alt="youtube" />
+    <span>
+      <strong>Youtube</strong>
+      Sometimes I post short videos from games I play
+    </span>
+  </a>
 </div>
