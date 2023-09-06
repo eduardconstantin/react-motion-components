@@ -1,5 +1,4 @@
-import { ComponentStory, ComponentMeta } from "@storybook/react";
-
+import type { StoryObj, Meta } from "@storybook/react";
 import { Button } from "./Button";
 
 export default {
@@ -17,12 +16,13 @@ export default {
     },
   },
   component: Button,
-} as ComponentMeta<typeof Button>;
+} as Meta<typeof Button>;
 
-const Template: ComponentStory<typeof Button> = (args) => <Button {...args} />;
+type Story = StoryObj<typeof Button>;
 
-export const Primary = Template.bind({});
-Primary.args = {
-  label: "Generate Site",
-  hueValue: 0,
+export const Primary: Story = {
+  args: {
+    label: "Generate Site",
+    hueValue: 0,
+  },
 };
