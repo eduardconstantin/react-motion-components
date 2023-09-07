@@ -26,7 +26,7 @@ export const Button = ({ label = "GO" }: ButtonProps) => {
         <div className={S.sContainer}>
           <svg className={S.btnBackground}>
             <filter id="filter">
-              <feTurbulence baseFrequency="0.004" numOctaves="3" seed="13" />
+              <feTurbulence baseFrequency="0.006" numOctaves="2" seed="11" />
               <feComponentTransfer>
                 <feFuncA type="discrete" tableValues="1 0 1 0 1 0 1 0 1 0" />
               </feComponentTransfer>
@@ -37,7 +37,10 @@ export const Button = ({ label = "GO" }: ButtonProps) => {
                       0 0 0 0 0
                       0 0 0 1 0"
               />
+              <feMorphology operator="dilate" radius="1" />
             </filter>
+            <rect width="100%" height="100%" filter="url(#filter)" />
+            <rect width="100%" height="100%" filter="url(#filter)" />
             <rect width="100%" height="100%" filter="url(#filter)" />
           </svg>
           {new Array(dimensions.no).fill(null).map((_, i) => (
