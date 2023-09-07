@@ -39,20 +39,21 @@
 
 .btn .current p {
   font-family: "Rajdhani", sans-serif;
-  position: absolute;
-  display: flex;
-  margin: 0;
-  z-index: 3;
   font-size: 2rem;
+  text-transform: uppercase;
   letter-spacing: 4px;
   color: rgb(86, 228, 21);
-  justify-content: center;
-  flex-direction: row;
-  align-items: center;
+  position: absolute;
   left: 4px;
   right: 0;
   bottom: 0;
   top: 0;
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  align-items: center;
+  margin: 0;
+  z-index: 3;
 }
 
 .sContainer {
