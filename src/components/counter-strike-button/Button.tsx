@@ -1,26 +1,28 @@
-import { useRef, useEffect, useState } from "react";
+import { useRef, useLayoutEffect, useState } from "react";
 import S from "./Button.module.css";
 
-export const Button = () => {
-  const btnRef = useRef<HTMLDivElement>(null);
-  const [size, setSize] = useState(0);
-  const [no, setNo] = useState(0);
+type ButtonProps = {
+  label?: string;
+};
 
-  useEffect(() => {
-    if (btnRef.current) {
-      setSize(btnRef.current.getBoundingClientRect().height / 3);
-      setNo(
-        Math.floor(
-          (btnRef.current.getBoundingClientRect().width / (btnRef.current.getBoundingClientRect().height / 3)) * 3
-        )
-      );
-    }
-  }, []);
+export const Button = ({ label = "GO" }: ButtonProps) => {
+  const btnRef = useRef<HTMLDivElement>(null);
+  const [dimensions, setDimensions] = useState<{ size?: number; no?: number }>({});
+
+  useLayoutEffect(() => {
+    const currentRef = btnRef.current;
+    if (!currentRef) return;
+
+    const { height, width } = currentRef.getBoundingClientRect();
+    const squareSize = height / 3;
+    const noOfSquares = Math.floor((width / squareSize) * 3);
+    setDimensions({ size: squareSize, no: noOfSquares });
+  }, [btnRef.current]);
 
   return (
     <button className={S.btn}>
       <div className={S.current} ref={btnRef}>
-        <p>GO</p>
+        <p>{label}</p>
         <div className={S.sContainer}>
           <svg className={S.btnBackground}>
             <filter id="filter">
@@ -43,8 +45,8 @@ export const Button = () => {
               key={i}
               className={S.square}
               style={{
-                width: size - 1,
-                height: size - 1,
+                width: dimensions.size! - 1,
+                height: dimensions.size! - 1,
                 animation: `${S.fade} ${4 - Math.random() * 2}s infinite ease ${Math.random() * 3}s`,
               }}
             ></div>
