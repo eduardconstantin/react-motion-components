@@ -21,5 +21,5 @@ export default {
 type Story = StoryObj<typeof Button>;
 
 export const Primary: Story = {
-  args: {},
+  args: { label: "GO" },
 };
