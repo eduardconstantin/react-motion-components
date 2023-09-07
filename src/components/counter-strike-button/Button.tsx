@@ -22,7 +22,23 @@ export const Button = () => {
       <div className={S.current} ref={btnRef}>
         <p>GO</p>
         <div className={S.sContainer}>
-          {new Array(no).fill(null).map((_, i) => (
+          <svg className={S.btnBackground}>
+            <filter id="filter">
+              <feTurbulence baseFrequency="0.004" numOctaves="3" seed="13" />
+              <feComponentTransfer>
+                <feFuncA type="discrete" tableValues="1 0 1 0 1 0 1 0 1 0" />
+              </feComponentTransfer>
+              <feConvolveMatrix kernelMatrix="-1 -1 -1 -1 8 -1 -1 -1 -1" />
+              <feColorMatrix
+                values="0 0 0 0 0
+                      1 1 1 1 0
+                      0 0 0 0 0
+                      0 0 0 1 0"
+              />
+            </filter>
+            <rect width="100%" height="100%" filter="url(#filter)" />
+          </svg>
+          {new Array(dimensions.no).fill(null).map((_, i) => (
             <div
               key={i}
               className={S.square}
