@@ -22,3 +22,20 @@ export const buttonAnim: Variants = {
     scale: 0.95,
   },
 };
+
+export const squaresAnim: Variants = {
+  init: {
+    opacity: 0,
+  },
+  anim: ({ i, j, k }) => ({
+    opacity: k,
+    transition: {
+      type: "tween",
+      ease: "anticipate",
+      repeat: Infinity,
+      repeatType: "mirror",
+      duration: i,
+      delay: j,
+    },
+  }),
+};

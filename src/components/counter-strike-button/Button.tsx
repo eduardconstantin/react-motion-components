@@ -1,10 +1,29 @@
 import { useRef, useLayoutEffect, useState } from "react";
 import { motion } from "framer-motion";
-import { buttonAnim } from "./Button.anim";
+import { buttonAnim, squaresAnim } from "./Button.anim";
 import S from "./Button.module.css";
 
 type ButtonProps = {
   children?: string;
+};
+
+const GenerateSquares = (no: number, size: number) => {
+  return Array(no)
+    .fill(null)
+    .map((_, i) => (
+      <motion.div
+        key={i}
+        className={S.square}
+        variants={squaresAnim}
+        initial="init"
+        animate="anim"
+        custom={{ i: 3.5 - Math.random() * 2, j: Math.random() * 3, k: 1 - Math.random() * 0.5 }}
+        style={{
+          width: size,
+          height: size,
+        }}
+      />
+    ));
 };
 
 export const Button = ({ children = "GO" }: ButtonProps) => {
@@ -49,21 +68,7 @@ export const Button = ({ children = "GO" }: ButtonProps) => {
         <rect width="100%" height="100%" filter="url(#filter)" />
       </svg>
       <p className={S.label}>{children}</p>
-      <div className={S.squaresContainer}>
-        {Array(dimensions.no)
-          .fill(null)
-          .map((_, i) => (
-            <div
-              key={i}
-              className={S.square}
-              style={{
-                width: dimensions.size! - 1,
-                height: dimensions.size! - 1,
-                animation: `${S.fade} ${4 - Math.random() * 2}s infinite ease ${Math.random() * 3}s`,
-              }}
-            ></div>
-          ))}
-      </div>
+      <div className={S.squaresContainer}>{GenerateSquares(dimensions.no!, dimensions.size! - 1)}</div>
     </motion.button>
   );
 };
