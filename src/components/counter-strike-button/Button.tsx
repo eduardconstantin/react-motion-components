@@ -1,12 +1,13 @@
 import { useRef, useLayoutEffect, useState } from "react";
+import { motion } from "framer-motion";
 import S from "./Button.module.css";
 
 type ButtonProps = {
-  label?: string;
+  children?: string;
 };
 
-export const Button = ({ label = "GO" }: ButtonProps) => {
-  const btnRef = useRef<HTMLDivElement>(null);
+export const Button = ({ children = "GO" }: ButtonProps) => {
+  const btnRef = useRef<HTMLButtonElement>(null);
   const [dimensions, setDimensions] = useState<{ size?: number; no?: number }>({});
 
   useLayoutEffect(() => {
@@ -20,30 +21,29 @@ export const Button = ({ label = "GO" }: ButtonProps) => {
   }, [btnRef.current]);
 
   return (
-    <button className={S.btn}>
-      <div className={S.current} ref={btnRef}>
-        <p>{label}</p>
-        <div className={S.sContainer}>
-          <svg className={S.btnBackground}>
-            <filter id="filter">
-              <feTurbulence baseFrequency="0.006" numOctaves="2" seed="11" />
-              <feComponentTransfer>
-                <feFuncA type="discrete" tableValues="1 0 1 0 1 0 1 0 1 0" />
-              </feComponentTransfer>
-              <feConvolveMatrix kernelMatrix="-1 -1 -1 -1 8 -1 -1 -1 -1" />
-              <feColorMatrix
-                values="0 0 0 0 0
-                      1 1 1 1 0
-                      0 0 0 0 0
-                      0 0 0 1 0"
-              />
-              <feMorphology operator="dilate" radius="1" />
-            </filter>
-            <rect width="100%" height="100%" filter="url(#filter)" />
-            <rect width="100%" height="100%" filter="url(#filter)" />
-            <rect width="100%" height="100%" filter="url(#filter)" />
-          </svg>
-          {new Array(dimensions.no).fill(null).map((_, i) => (
+    <button className={S.button} ref={btnRef}>
+      <svg className={S.background}>
+        <filter id="filter">
+          <feTurbulence baseFrequency="0.006" numOctaves="2" seed="11" />
+          <feComponentTransfer>
+            <feFuncA type="discrete" tableValues="1 0 1 0 1 0 1 0 1 0" />
+          </feComponentTransfer>
+          <feConvolveMatrix kernelMatrix="-1 -1 -1 -1 8 -1 -1 -1 -1" />
+          <feColorMatrix
+            values="0 0 0 0 0
+                    1 1 0 0 0
+                    0 0 0 0 0
+                    0 0 0 0.15 0"
+          />
+          <feMorphology operator="dilate" radius="1" />
+        </filter>
+        <rect width="100%" height="100%" filter="url(#filter)" />
+      </svg>
+      <p className={S.label}>{children}</p>
+      <div className={S.squaresContainer}>
+        {Array(dimensions.no)
+          .fill(null)
+          .map((_, i) => (
             <div
               key={i}
               className={S.square}
@@ -54,7 +54,6 @@ export const Button = ({ label = "GO" }: ButtonProps) => {
               }}
             ></div>
           ))}
-        </div>
       </div>
     </button>
   );
