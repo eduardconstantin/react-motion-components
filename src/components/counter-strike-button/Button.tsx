@@ -1,5 +1,6 @@
 import { useRef, useLayoutEffect, useState } from "react";
 import { motion } from "framer-motion";
+import { buttonAnim } from "./Button.anim";
 import S from "./Button.module.css";
 
 type ButtonProps = {
@@ -21,7 +22,15 @@ export const Button = ({ children = "GO" }: ButtonProps) => {
   }, [btnRef.current]);
 
   return (
-    <button className={S.button} ref={btnRef}>
+    <motion.button
+      className={S.button}
+      ref={btnRef}
+      variants={buttonAnim}
+      initial="init"
+      animate="init"
+      whileHover="anim"
+      whileTap="tap"
+    >
       <svg className={S.background}>
         <filter id="filter">
           <feTurbulence baseFrequency="0.006" numOctaves="2" seed="11" />
@@ -55,6 +64,6 @@ export const Button = ({ children = "GO" }: ButtonProps) => {
             ></div>
           ))}
       </div>
-    </button>
+    </motion.button>
   );
 };

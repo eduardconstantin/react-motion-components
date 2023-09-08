@@ -9,12 +9,6 @@
   padding: 0;
   position: relative;
   background-color: #21421a;
-  transition: all 0.1s;
-  box-shadow: inset 50px 0 50px -25px rgba(74, 194, 18, 0.7), inset -50px 0 50px -25px rgba(74, 194, 18, 0.7);
-}
-
-.button:hover {
-  box-shadow: inset 80px 0 50px -25px rgba(74, 194, 18, 0.7), inset -80px 0 50px -25px rgba(74, 194, 18, 0.7);
 }
 
 .button:after {
