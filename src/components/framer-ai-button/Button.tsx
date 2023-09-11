@@ -38,6 +38,7 @@ export const Button = ({ label = "Button Text", hueValue = 0 }: ButtonProps) => 
         </motion.svg>
       ));
   };
+
   return (
     <div style={{ position: "relative" }}>
       <motion.div initial="init" animate={hover ? "anim" : "init"} className={S.sparkleContainer}>

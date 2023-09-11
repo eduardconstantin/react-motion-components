@@ -1,5 +1,5 @@
 import { Variants } from "framer-motion";
-import { RANDOM } from "../helpers";
+import { RANDOM_INT } from "../helpers";
 
 export const buttonAnim: Variants = {
   init: {
@@ -120,24 +120,24 @@ export const sparkleAnim: Variants = {
     rotateZ: 0,
     opacity: 0,
     scale: 0,
-    top: `calc(${RANDOM(3, 9)} * 10%)`,
-    left: `calc(${RANDOM(3, 9)} * 10%)`,
-    width: `calc(${RANDOM(3, 9) / 10} * 14px)`,
-    transformOrigin: `${Math.random() > 0.5 ? RANDOM(30, 80) * -10 : RANDOM(30, 80) * 10}% ${
-      Math.random() > 0.5 ? RANDOM(30, 80) * -10 : RANDOM(30, 80) * 10
+    top: `calc(${RANDOM_INT(3, 9)} * 10%)`,
+    left: `calc(${RANDOM_INT(3, 9)} * 10%)`,
+    width: `calc(${RANDOM_INT(3, 9) / 10} * 14px)`,
+    transformOrigin: `${Math.random() > 0.5 ? RANDOM_INT(30, 80) * -10 : RANDOM_INT(30, 80) * 10}% ${
+      Math.random() > 0.5 ? RANDOM_INT(30, 80) * -10 : RANDOM_INT(30, 80) * 10
     }%`,
     transition: { duration: 0.5 },
   }),
   anim: (i: number) => ({
     scale: 1,
     rotateZ: i % 2 === 0 ? [0, 360] : [-360, 0],
-    opacity: RANDOM(5, 8) / 10,
+    opacity: RANDOM_INT(5, 8) / 10,
     transition: {
       opacity: { duration: 1, ease: "anticipate" },
       scale: { duration: 2, ease: "anticipate" },
       ease: "linear",
-      delay: RANDOM(1, 10) * -1,
-      duration: RANDOM(10, 25),
+      delay: RANDOM_INT(1, 10) * -1,
+      duration: RANDOM_INT(10, 25),
       repeat: Infinity,
     },
   }),
