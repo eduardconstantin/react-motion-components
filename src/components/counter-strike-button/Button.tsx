@@ -1,48 +1,31 @@
-import { useRef, useLayoutEffect, useState } from "react";
+import { useRef, FC } from "react";
 import { motion } from "framer-motion";
-import { buttonAnim, squaresAnim } from "./Button.anim";
+import { buttonAnim } from "./Button.anim";
+import { ButtonProps, ButtonType } from "./Button.d";
+import { useSquareData } from "./hooks";
+import AnimatedSquares from "./components/AnimatedSquares";
+import MapBackground from "./components/MapBackground";
 import S from "./Button.module.css";
 
-type ButtonProps = {
-  children?: string;
-};
-
-const GenerateSquares = (no: number, size: number) => {
-  return Array(no)
-    .fill(null)
-    .map((_, i) => (
-      <motion.div
-        key={i}
-        className={S.square}
-        variants={squaresAnim}
-        initial="init"
-        animate="anim"
-        custom={{ i: 3.5 - Math.random() * 2, j: Math.random() * 3, k: 1 - Math.random() * 0.5 }}
-        style={{
-          width: size,
-          height: size,
-        }}
-      />
-    ));
-};
-
-export const Button = ({ children = "GO" }: ButtonProps) => {
+const Button: FC<ButtonProps> = ({
+  children = "GO",
+  randomBg = false,
+  buttonType = "Default",
+  buttonColor,
+  size = 5,
+  ...rest
+}: ButtonProps) => {
   const btnRef = useRef<HTMLButtonElement>(null);
-  const [dimensions, setDimensions] = useState<{ size?: number; no?: number }>({});
+  const squaresData = useSquareData(btnRef);
 
-  useLayoutEffect(() => {
-    const currentRef = btnRef.current;
-    if (!currentRef) return;
-
-    const { height, width } = currentRef.getBoundingClientRect();
-    const squareSize = height / 3;
-    const noOfSquares = Math.floor((width / squareSize) * 3);
-    setDimensions({ size: squareSize, no: noOfSquares });
-  }, [btnRef.current]);
+  document.documentElement.style.setProperty("--overlay", buttonColor || ButtonType[buttonType]);
+  document.documentElement.style.setProperty("--size", size.toString());
 
   return (
     <motion.button
+      {...rest}
       className={S.button}
+      type="button"
       ref={btnRef}
       variants={buttonAnim}
       initial="init"
@@ -50,25 +33,10 @@ export const Button = ({ children = "GO" }: ButtonProps) => {
       whileHover="anim"
       whileTap="tap"
     >
-      <svg className={S.background}>
-        <filter id="filter">
-          <feTurbulence baseFrequency="0.006" numOctaves="2" seed="11" />
-          <feComponentTransfer>
-            <feFuncA type="discrete" tableValues="1 0 1 0 1 0 1 0 1 0" />
-          </feComponentTransfer>
-          <feConvolveMatrix kernelMatrix="-1 -1 -1 -1 8 -1 -1 -1 -1" />
-          <feColorMatrix
-            values="0 0 0 0 0
-                    1 1 0 0 0
-                    0 0 0 0 0
-                    0 0 0 0.15 0"
-          />
-          <feMorphology operator="dilate" radius="1" />
-        </filter>
-        <rect width="100%" height="100%" filter="url(#filter)" />
-      </svg>
+      <MapBackground random={randomBg} />
       <p className={S.label}>{children}</p>
-      <div className={S.squaresContainer}>{GenerateSquares(dimensions.no!, dimensions.size! - 1)}</div>
+      <AnimatedSquares squareData={squaresData} />
     </motion.button>
   );
 };
+export default Button;
