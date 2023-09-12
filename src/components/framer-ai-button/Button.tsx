@@ -9,14 +9,10 @@ import {
   labelAnim,
   sparkleAnim,
 } from "./Button.anim";
+import { ButtonProps } from "./Button.d";
 import S from "./Button.module.css";
 
-type ButtonProps = {
-  children?: string;
-  hueValue?: number;
-};
-
-export const Button = ({ children = "Button Text", hueValue = 0 }: ButtonProps) => {
+export const Button = ({ children = "Button Text", hueValue = 0, ...rest }: ButtonProps) => {
   const [hover, setHover] = useState(false);
 
   const GenerateSparkles = () => {
@@ -45,6 +41,7 @@ export const Button = ({ children = "Button Text", hueValue = 0 }: ButtonProps) 
         {GenerateSparkles()}
       </motion.div>
       <motion.button
+        {...rest}
         variants={buttonAnim}
         initial="init"
         animate={hover ? "anim" : "init"}
