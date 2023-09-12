@@ -55,10 +55,20 @@ export const Button = ({ label = "Button Text", hueValue = 0 }: ButtonProps) => 
         type="button"
         style={{ filter: `hue-rotate(${hueValue}deg)` }}
       >
-        <motion.div variants={highlightContainerAnim} className={S.highlightContainer}>
+        <motion.div
+          variants={highlightContainerAnim}
+          className={S.highlightContainer}
+          animate={hover ? "anim" : "init"}
+        >
           <motion.div variants={highlightAnim} className={S.highlight}></motion.div>
         </motion.div>
-        <motion.svg variants={svgAnim} viewBox="0 0 12 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <motion.svg
+          variants={svgAnim}
+          viewBox="0 0 12 13"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+          animate={hover ? "anim" : "init"}
+        >
           <motion.path
             variants={pathAnim}
             custom={1}
