@@ -20,7 +20,7 @@ export default {
 
 type Story = StoryObj<typeof Button>;
 
-export const Primary: Story = {
+export const Default: Story = {
   args: {
     label: "Generate Site",
     hueValue: 0,
