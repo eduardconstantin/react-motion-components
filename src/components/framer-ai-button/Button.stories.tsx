@@ -22,7 +22,7 @@ type Story = StoryObj<typeof Button>;
 
 export const Default: Story = {
   args: {
-    label: "Generate Site",
+    children: "Generate Site",
     hueValue: 0,
   },
 };
