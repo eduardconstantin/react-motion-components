@@ -6,7 +6,7 @@ import Stars from "./components/Stars";
 import { ButtonProps } from "./Button.d";
 import S from "./Button.module.css";
 
-export const Button: FC<ButtonProps> = ({ children = "Button Text", hueValue = 0, ...rest }: ButtonProps) => {
+const Button: FC<ButtonProps> = ({ children = "Button Text", hueValue = 0, ...rest }: ButtonProps) => {
   const [hover, setHover] = useState<boolean>(false);
   const [sparkles] = useState<number[]>(Array(30).fill(0));
 
@@ -38,3 +38,5 @@ export const Button: FC<ButtonProps> = ({ children = "Button Text", hueValue = 0
     </div>
   );
 };
+
+export default Button;
