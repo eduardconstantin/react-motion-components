@@ -26,6 +26,7 @@ const Button: FC<ButtonProps> = ({ children = "Button Text", hueValue = 0, ...re
         style={{ filter: `hue-rotate(${hueValue}deg)` }}
       >
         <motion.div
+          data-testid="highlight"
           variants={highlightContainerAnim}
           className={S.highlightContainer}
           animate={hover ? "anim" : "init"}
