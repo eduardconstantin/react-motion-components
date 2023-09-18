@@ -3,7 +3,7 @@ import { ButtonType } from "./Button.d";
 import Button from "./Button";
 
 export default {
-  title: "Components/Buttons/Counter-Strike Button",
+  title: "Components/Buttons/Counter-Strike 2 Button",
   parameters: {
     layout: "centered",
     backgrounds: {
