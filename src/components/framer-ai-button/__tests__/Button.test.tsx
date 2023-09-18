@@ -2,7 +2,6 @@ import { render } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import "@testing-library/jest-dom";
 import Button from "../Button";
-import "../Button.module.css";
 
 describe("Button", () => {
   it("renders correctly", () => {
