@@ -3,18 +3,6 @@ import Button from "./Button";
 
 export default {
   title: "Components/Buttons/Framer AI Button",
-  parameters: {
-    layout: "centered",
-    backgrounds: {
-      default: "Custom Dark",
-      values: [
-        {
-          name: "Custom Dark",
-          value: "#121112",
-        },
-      ],
-    },
-  },
   component: Button,
 } as Meta<typeof Button>;
 

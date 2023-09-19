@@ -4,18 +4,6 @@ import Button from "./Button";
 
 export default {
   title: "Components/Buttons/Counter-Strike 2 Button",
-  parameters: {
-    layout: "centered",
-    backgrounds: {
-      default: "Custom Dark",
-      values: [
-        {
-          name: "Custom Dark",
-          value: "#121112",
-        },
-      ],
-    },
-  },
   args: { randomBg: true, buttonType: "Default", children: "default", buttonColor: undefined, size: 5 },
   argTypes: {
     randomBg: {
