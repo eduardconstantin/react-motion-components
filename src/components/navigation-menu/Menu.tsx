@@ -1,18 +1,25 @@
-import { useState } from "react";
+import { useState, FC } from "react";
 import MenuBar from "./components/MenuBar/MenuBar";
 import { motion } from "framer-motion";
 import { BsList, BsFillBootstrapFill } from "react-icons/bs";
+import { MenuProps } from "./Menu.d";
 import style from "./Menu.module.css";
 
-const Menu = ({ menuIcon, menuElements, tiltAngle, menuSize }) => {
+const Menu: FC<MenuProps> = ({
+  menuIcon = <BsList />,
+  menuElements = defaultElements,
+  tiltAngle = 5,
+  menuSize = null,
+}) => {
   const [isOpen, setIsOpen] = useState(false);
+  const toggleMenu = () => setIsOpen((prevIsOpen) => !prevIsOpen);
 
   return (
     <motion.div className={style.menuContainer}>
       <motion.button
         type="button"
         className={style.menuButton}
-        onClick={() => setIsOpen((isOpen) => !isOpen)}
+        onClick={toggleMenu}
         initial={{ translateZ: 0, rotateZ: 45 }}
         whileTap={{ translateZ: -60 }}
       >
@@ -47,10 +54,3 @@ const defaultElements = [
     onClick: () => {},
   },
 ];
-
-Menu.defaultProps = {
-  menuIcon: <BsList />,
-  menuSize: null,
-  tiltAngle: 5,
-  menuElements: defaultElements,
-};
