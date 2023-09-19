@@ -1,0 +1,19 @@
+.listButton {
+	background-color: transparent;
+	border: none;
+	padding: 0;
+}
+.listButton > div {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.listButton p {
+	font-family: 'Dosis', sans-serif;
+	font-size: 12px;
+	color: #5d606f;
+	margin: 0;
+}
+.listButton svg {
+	font-size: 1.6rem;
+}
