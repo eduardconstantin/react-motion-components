@@ -1,21 +1,28 @@
-import MenuLink from "../MenuLink/MenuLink";
+import { FC, MouseEvent } from "react";
 import { motion, useTransform, useMotionValue } from "framer-motion";
+import MenuLink from "../MenuLink/MenuLink";
 import { menuAnim } from "./Menu.anim";
+import { MenuBarProps, MenuClasses } from "./MenuBar.d";
 import style from "./MenuBar.module.css";
 
-export default function MenuBar({ menuElements, menuSize, isOpen, angle }) {
+const MenuBar: FC<MenuBarProps> = ({ menuElements, menuSize = null, isOpen = false, angle = 5 }) => {
   const noOfElements = menuElements.length;
   const x = useMotionValue(0);
   const rotateY = useTransform(x, [0, 800], [-angle, angle]);
 
-  const handleMouse = (event) => {
+  const handleMouse = (event: MouseEvent<HTMLDivElement>) => {
     const rect = event.currentTarget.getBoundingClientRect();
     x.set(event.clientX - rect.left);
   };
 
-  const menuClasses = { 2: style.menuSmall, 4: style.menuMedium, 6: style.menuLarge, 8: style.menuXlarge };
+  const menuClasses: MenuClasses = {
+    2: style.menuSmall,
+    4: style.menuMedium,
+    6: style.menuLarge,
+    8: style.menuXlarge,
+  };
 
-  const addMiddleGap = (index, length) => {
+  const addMiddleGap = (index: number, length: number) => {
     if (index === Math.floor((length - 1) / 2)) {
       return style.leftElement;
     } else if (index === Math.ceil((length - 1) / 2)) {
@@ -43,38 +50,6 @@ export default function MenuBar({ menuElements, menuSize, isOpen, angle }) {
       </ul>
     </motion.div>
   );
-}
-
-const defaultElements = [
-  {
-    buttonLabel: "element1",
-    onClick: () => {
-      console.log("element1");
-    },
-  },
-  {
-    buttonLabel: "element2",
-    onClick: () => {
-      console.log("element2");
-    },
-  },
-  {
-    buttonLabel: "element3",
-    onClick: () => {
-      console.log("element3");
-    },
-  },
-  {
-    buttonLabel: "element4",
-    onClick: () => {
-      console.log("element4");
-    },
-  },
-];
-
-MenuBar.defaultProps = {
-  menuSize: null,
-  isOpen: "closed",
-  angle: 5,
-  menuElements: defaultElements,
 };
+
+export default MenuBar;
