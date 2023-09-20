@@ -1,4 +1,4 @@
-import { FC, MouseEvent, useState } from "react";
+import { FC, MouseEvent, useState, useMemo } from "react";
 import { motion, useTransform, useMotionValue } from "framer-motion";
 import MenuLink from "../MenuLink/MenuLink";
 import { menuAnim } from "./Menu.anim";
@@ -6,10 +6,13 @@ import { MenuBarProps, MenuClasses } from "./MenuBar.d";
 import style from "./MenuBar.module.css";
 
 const MenuBar: FC<MenuBarProps> = ({ menuElements, menuSize, isOpen = false, angle }) => {
-  const noOfElements = menuElements.length;
+  const noOfElements = useMemo(() => {
+    return menuElements.length;
+  }, [menuElements]);
+
   const [width, setWidth] = useState<number>(0);
-  const x = useMotionValue(width / 2);
-  const rotateY = useTransform(x, [0, width], [-angle / 2, angle / 2]);
+  const x = useMotionValue<number>(width / 2);
+  const rotateY = useTransform<unknown, number>(x, [0, width], [-angle / 2, angle / 2]);
 
   const handleMouse = (event: MouseEvent<HTMLDivElement>) => {
     const rect = event.currentTarget.getBoundingClientRect();

@@ -11,7 +11,7 @@ const Menu: FC<MenuProps> = ({
   tiltAngle = 10,
   menuSize = null,
 }) => {
-  const [isOpen, setIsOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState<boolean>(false);
   const toggleMenu = () => setIsOpen((prevIsOpen) => !prevIsOpen);
 
   return (
