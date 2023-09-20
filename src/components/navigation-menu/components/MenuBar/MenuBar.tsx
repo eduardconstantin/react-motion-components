@@ -1,17 +1,19 @@
-import { FC, MouseEvent } from "react";
+import { FC, MouseEvent, useState } from "react";
 import { motion, useTransform, useMotionValue } from "framer-motion";
 import MenuLink from "../MenuLink/MenuLink";
 import { menuAnim } from "./Menu.anim";
 import { MenuBarProps, MenuClasses } from "./MenuBar.d";
 import style from "./MenuBar.module.css";
 
-const MenuBar: FC<MenuBarProps> = ({ menuElements, menuSize = null, isOpen = false, angle = 5 }) => {
+const MenuBar: FC<MenuBarProps> = ({ menuElements, menuSize, isOpen = false, angle }) => {
   const noOfElements = menuElements.length;
-  const x = useMotionValue(0);
-  const rotateY = useTransform(x, [0, 800], [-angle, angle]);
+  const [width, setWidth] = useState<number>(0);
+  const x = useMotionValue(width / 2);
+  const rotateY = useTransform(x, [0, width], [-angle / 2, angle / 2]);
 
   const handleMouse = (event: MouseEvent<HTMLDivElement>) => {
     const rect = event.currentTarget.getBoundingClientRect();
+    setWidth(rect.width);
     x.set(event.clientX - rect.left);
   };
 

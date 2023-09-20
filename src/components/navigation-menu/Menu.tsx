@@ -8,7 +8,7 @@ import style from "./Menu.module.css";
 const Menu: FC<MenuProps> = ({
   menuIcon = <BsList />,
   menuElements = defaultElements,
-  tiltAngle = 5,
+  tiltAngle = 10,
   menuSize = null,
 }) => {
   const [isOpen, setIsOpen] = useState(false);
