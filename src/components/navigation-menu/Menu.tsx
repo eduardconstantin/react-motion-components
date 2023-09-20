@@ -20,8 +20,8 @@ const Menu: FC<MenuProps> = ({
         type="button"
         className={style.menuButton}
         onClick={toggleMenu}
-        initial={{ translateZ: 0, rotateZ: 45 }}
-        whileTap={{ translateZ: -60 }}
+        initial={{ scale: 1, rotateZ: 45 }}
+        whileTap={{ scale: 0.8 }}
       >
         {menuIcon}
       </motion.button>
