@@ -7,8 +7,8 @@ export type MenuElement = {
 };
 
 export type MenuProps = {
-  menuIcon: ReactNode;
-  menuElements: MenuElement[];
-  tiltAngle: number;
-  menuSize: number | null;
+  menuIcon?: ReactNode;
+  menuElements?: MenuElement[];
+  tiltAngle?: number;
+  menuSize?: number | null;
 };

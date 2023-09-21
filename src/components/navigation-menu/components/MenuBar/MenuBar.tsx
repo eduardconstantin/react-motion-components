@@ -1,7 +1,7 @@
 import { FC, MouseEvent, useState, useMemo } from "react";
 import { motion, useTransform, useMotionValue } from "framer-motion";
 import MenuLink from "../MenuLink/MenuLink";
-import { menuAnim } from "./Menu.anim";
+import { menuAnim } from "./MenuBar.anim";
 import { MenuBarProps, MenuClasses } from "./MenuBar.d";
 import style from "./MenuBar.module.css";
 
@@ -42,6 +42,7 @@ const MenuBar: FC<MenuBarProps> = ({ menuElements, menuSize, isOpen = false, ang
       initial="closed"
       animate={isOpen ? "open" : "closed"}
       onMouseMove={handleMouse}
+      data-testid="nav-bar"
       style={{ rotateY: rotateY }}
     >
       <ul className={style.menuList}>

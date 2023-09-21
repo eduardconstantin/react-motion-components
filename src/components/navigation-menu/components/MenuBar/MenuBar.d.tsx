@@ -3,7 +3,7 @@ import { MenuElement } from "../../Menu.d";
 export type MenuBarProps = {
   menuElements: MenuElement[];
   menuSize: number | null;
-  isOpen: boolean;
+  isOpen?: boolean;
   angle: number;
 };
 

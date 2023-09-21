@@ -18,6 +18,7 @@ const Menu: FC<MenuProps> = ({
     <motion.div className={style.menuContainer}>
       <motion.button
         type="button"
+        data-testid="menu-button"
         className={style.menuButton}
         onClick={toggleMenu}
         initial={{ scale: 1, rotateZ: 45 }}

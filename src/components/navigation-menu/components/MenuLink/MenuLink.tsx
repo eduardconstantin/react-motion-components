@@ -5,7 +5,7 @@ import { GoGlobe } from "react-icons/go";
 import { MenuLinkProps } from "./MenuLink.d";
 import style from "./MenuLink.module.css";
 
-const MenuLink: FC<MenuLinkProps> = ({ buttonIcon = <GoGlobe />, buttonLabel = "Default", onClick = () => {} }) => {
+const MenuLink: FC<MenuLinkProps> = ({ buttonIcon = <GoGlobe />, buttonLabel = "Default", onClick }) => {
   return (
     <motion.button
       initial="initial"
