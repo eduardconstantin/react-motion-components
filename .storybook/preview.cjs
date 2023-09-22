@@ -8,6 +8,16 @@ export const parameters = {
       date: /Date$/,
     },
   },
+  layout: "centered",
+  backgrounds: {
+    default: "Custom Dark",
+    values: [
+      {
+        name: "Custom Dark",
+        value: "#121112",
+      },
+    ],
+  },
   docs: {
     theme: themes.dark,
   },

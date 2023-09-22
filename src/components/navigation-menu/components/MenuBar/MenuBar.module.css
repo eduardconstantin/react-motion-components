@@ -1,0 +1,103 @@
+/*================ Menu bar ================*/
+.menuWrapper {
+	position: relative;
+	top: -12px;
+	height: 70px;
+	background: #abadb4;
+}
+.menuWrapper:after {
+	content: '';
+	position: absolute;
+	background: #e3e6e9;
+	top: 3.5px;
+	left: 3.4px;
+	right: 3.4px;
+	bottom: 3.5px;
+}
+.menuWrapper:before {
+	content: '';
+	position: absolute;
+	background: #f9f9f9;
+	top: 2px;
+	left: 2px;
+	right: 2px;
+	bottom: 2px;
+}
+
+.menuList {
+	display: flex;
+	flex-direction: row;
+	z-index: 2;
+	position: relative;
+	list-style: none;
+	height: 100%;
+	margin: 0;
+	padding: 0 2%;
+}
+.menuList li {
+	width: 100%;
+	justify-content: center;
+	align-items: center;
+	display: flex;
+	flex-direction: column;
+}
+
+.menuList li.leftElement {
+	margin-right: 2.5rem;
+}
+.menuList li.rightElement {
+	margin-left: 2.5rem;
+}
+/*================ Menu bar ================*/
+
+/*================ Small menu ================*/
+.menuWrapper.menuSmall {
+	width: 350px;
+	clip-path: polygon(39% -2%, 50% 51%, 61% -2%, 100% 0, 100% 100%, 0 100%, 0 0);
+}
+.menuWrapper.menuSmall:after {
+	clip-path: polygon(38.9% 0%, 50% 58.2%, 61.1% 0, 100% 0, 100% 100%, 0 100%, 0 0);
+}
+.menuWrapper.menuSmall:before {
+	clip-path: polygon(39% 0, 50% 55%, 61% 0, 100% 0, 100% 100%, 0 100%, 0 0);
+}
+/*================ Small menu ================*/
+
+/*================ Medium menu ================*/
+.menuWrapper.menuMedium {
+	width: 500px;
+	clip-path: polygon(42% -2%, 50% 51%, 58% -2%, 100% 0, 100% 100%, 0 100%, 0 0);
+}
+.menuWrapper.menuMedium:after {
+	clip-path: polygon(41.9% 0%, 50% 58.2%, 58.1% 0, 100% 0, 100% 100%, 0 100%, 0 0);
+}
+.menuWrapper.menuMedium:before {
+	clip-path: polygon(42% 0, 50% 55%, 58% 0, 100% 0, 100% 100%, 0 100%, 0 0);
+}
+/*================ Medium menu ================*/
+
+/*================ Large menu ================*/
+.menuWrapper.menuLarge {
+	width: 650px;
+	clip-path: polygon(44% -2%, 50% 51%, 56% -2%, 100% 0, 100% 100%, 0 100%, 0 0);
+}
+.menuWrapper.menuLarge:after {
+	clip-path: polygon(43.9% 0%, 50% 58.2%, 56.1% 0, 100% 0, 100% 100%, 0 100%, 0 0);
+}
+.menuWrapper.menuLarge:before {
+	clip-path: polygon(44% 0, 50% 55%, 56% 0, 100% 0, 100% 100%, 0 100%, 0 0);
+}
+/*================ Large menu ================*/
+
+/*================ Extra Large menu ================*/
+.menuWrapper.menuXlarge {
+	width: 800px;
+	clip-path: polygon(45% -2%, 50% 51%, 55% -2%, 100% 0, 100% 100%, 0 100%, 0 0);
+}
+.menuWrapper.menuXlarge:after {
+	clip-path: polygon(44.9% 0%, 50% 58.2%, 55.1% 0, 100% 0, 100% 100%, 0 100%, 0 0);
+}
+.menuWrapper.menuXlarge:before {
+	clip-path: polygon(45% 0, 50% 55%, 55% 0, 100% 0, 100% 100%, 0 100%, 0 0);
+}
+/*================ Extra Large menu ================*/
