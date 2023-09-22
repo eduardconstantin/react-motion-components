@@ -1,5 +1,18 @@
 import type { StoryObj, Meta } from "@storybook/react";
-import { BsList, BsFillBootstrapFill } from "react-icons/bs";
+import {
+  BsHouse,
+  BsNewspaper,
+  BsShopWindow,
+  BsPencilSquare,
+  BsList,
+  BsFillBootstrapFill,
+  BsCart,
+  BsChat,
+  BsEnvelope,
+  BsHeart,
+  BsImage,
+  BsPerson,
+} from "react-icons/bs";
 import Menu from "./Menu";
 
 export default {
@@ -26,55 +39,77 @@ export default {
   },
 } as Meta<typeof Menu>;
 
+const small = [
+  {
+    buttonIcon: <BsHouse />,
+    buttonLabel: "home",
+    onClick: () => {},
+  },
+  {
+    buttonIcon: <BsNewspaper />,
+    buttonLabel: "news",
+    onClick: () => {},
+  },
+  {
+    buttonIcon: <BsShopWindow />,
+    buttonLabel: "shop",
+    onClick: () => {},
+  },
+  {
+    buttonIcon: <BsPencilSquare />,
+    buttonLabel: "contact",
+    onClick: () => {},
+  },
+];
 const elements = [
   {
-    buttonIcon: <BsFillBootstrapFill />,
-    buttonLabel: "element1",
+    buttonIcon: <BsEnvelope />,
+    buttonLabel: "mail",
     onClick: () => {},
   },
   {
-    buttonIcon: <BsFillBootstrapFill />,
-    buttonLabel: "element2",
+    buttonIcon: <BsChat />,
+    buttonLabel: "chat",
     onClick: () => {},
   },
   {
-    buttonIcon: <BsFillBootstrapFill />,
-    buttonLabel: "element3",
+    buttonIcon: <BsCart />,
+    buttonLabel: "cart",
     onClick: () => {},
   },
   {
-    buttonIcon: <BsFillBootstrapFill />,
-    buttonLabel: "element4",
+    buttonIcon: <BsHouse />,
+    buttonLabel: "home",
     onClick: () => {},
   },
   {
-    buttonIcon: <BsFillBootstrapFill />,
-    buttonLabel: "element5",
+    buttonIcon: <BsNewspaper />,
+    buttonLabel: "news",
     onClick: () => {},
   },
   {
-    buttonIcon: <BsFillBootstrapFill />,
-    buttonLabel: "element6",
+    buttonIcon: <BsShopWindow />,
+    buttonLabel: "shop",
     onClick: () => {},
   },
   {
-    buttonIcon: <BsFillBootstrapFill />,
-    buttonLabel: "element7",
+    buttonIcon: <BsPencilSquare />,
+    buttonLabel: "contact",
     onClick: () => {},
   },
   {
-    buttonIcon: <BsFillBootstrapFill />,
-    buttonLabel: "element8",
+    buttonIcon: <BsHeart />,
+    buttonLabel: "heart",
     onClick: () => {},
   },
   {
-    buttonIcon: <BsFillBootstrapFill />,
-    buttonLabel: "element9",
+    buttonIcon: <BsImage />,
+    buttonLabel: "image",
     onClick: () => {},
   },
   {
-    buttonIcon: <BsFillBootstrapFill />,
-    buttonLabel: "element10",
+    buttonIcon: <BsPerson />,
+    buttonLabel: "profile",
     onClick: () => {},
   },
 ];
@@ -102,6 +137,7 @@ export const Small: Story = {
   args: {
     ...Default.args,
     menuSize: 2,
+    menuElements: small,
   },
   argTypes: Default.argTypes,
 };
