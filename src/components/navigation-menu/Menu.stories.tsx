@@ -5,7 +5,6 @@ import {
   BsShopWindow,
   BsPencilSquare,
   BsList,
-  BsFillBootstrapFill,
   BsCart,
   BsChat,
   BsEnvelope,
