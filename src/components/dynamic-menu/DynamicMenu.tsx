@@ -1,9 +1,11 @@
-import { useState } from "react";
+import { useState, FC } from "react";
+import { Props } from "./DynamicMenu.d";
 import * as S from "./DynamicMenu.styles";
 import * as anim from "./DynamicMenu.anim";
 
-export const DynamicMenu = ({ menuName = "Dynamic Menu", menuItems, openDirection = "down" }: Props) => {
-  const [isOpen, setIsOpen] = useState(false);
+export const DynamicMenu: FC<Props> = ({ menuName = "Dynamic Menu", menuItems, openDirection = "down" }: Props) => {
+  const [isOpen, setIsOpen] = useState<boolean>(false);
+
   return (
     <S.MenuContainer openDirection={openDirection}>
       <S.MenuWrapper
@@ -26,10 +28,4 @@ export const DynamicMenu = ({ menuName = "Dynamic Menu", menuItems, openDirectio
       </S.MenuWrapper>
     </S.MenuContainer>
   );
-};
-
-type Props = {
-  menuName?: string;
-  menuItems: JSX.Element[];
-  openDirection?: "up" | "down";
 };
