@@ -3,7 +3,7 @@ import { Props } from "./DynamicMenu.d";
 import * as S from "./DynamicMenu.styles";
 import * as anim from "./DynamicMenu.anim";
 
-export const DynamicMenu: FC<Props> = ({ menuName = "Dynamic Menu", menuItems, openDirection = "down" }: Props) => {
+const DynamicMenu: FC<Props> = ({ menuName = "Dynamic Menu", menuItems, openDirection = "down" }: Props) => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
 
   return (
@@ -29,3 +29,4 @@ export const DynamicMenu: FC<Props> = ({ menuName = "Dynamic Menu", menuItems, o
     </S.MenuContainer>
   );
 };
+export default DynamicMenu;
