@@ -16,7 +16,7 @@ const DynamicMenu: FC<Props> = ({ menuName = "Dynamic Menu", menuItems, openDire
         custom={menuItems.length}
       >
         <S.MenuButton onClick={() => setIsOpen(!isOpen)}>{menuName}</S.MenuButton>
-        <S.MenuContent variants={anim.menuContainer} custom={[menuItems.length, openDirection]}>
+        <S.MenuContent variants={anim.menuContainer} custom={[menuItems.length, openDirection]} data-testid="menu">
           {menuItems.map((item: JSX.Element, i: number) => {
             return (
               <S.MenuContentItem key={`key${i}`} variants={anim.item}>

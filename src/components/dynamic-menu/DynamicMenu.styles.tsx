@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { motion } from "framer-motion";
 
-export const MenuContainer = styled.div<{ openDirection: string }>`
+export const MenuContainer = styled("div")<{ openDirection: string }>`
   display: flex;
   flex-direction: ${(props) => (props.openDirection === "down" ? "column" : "column-reverse")};
   width: fit-content;
