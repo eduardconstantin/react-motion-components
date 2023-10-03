@@ -13,6 +13,7 @@ export const MenuWrapper = styled(motion.div)<{ openDirection: string }>`
   background-color: black;
   width: 150px;
   height: 40px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
 `;
 export const MenuButton = styled.button`
   background-color: transparent;
