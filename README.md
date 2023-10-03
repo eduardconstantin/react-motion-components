@@ -23,6 +23,8 @@ library for React and documented with storybook, a tool for developing and testi
   <img align="center" height="300px" src="https://cdn.dribbble.com/userupload/5766170/file/original-8c76fbedd0ced146fff4c572616a6b4d.gif"/>
   <h3 align="center">Navigation Menu</h3>
   <img align="center" height="300px" src="public/assets/menu.gif"/>
+  <h3 align="center">Dynamic Menu</h3>
+  <img align="center" height="300px" src="public/assets/dynMenu.gif"/>
 </div>
 
 ## 🌱 Getting Started
