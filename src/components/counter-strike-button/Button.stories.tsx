@@ -4,7 +4,13 @@ import Button from "./Button";
 
 export default {
   title: "Components/Buttons/Counter-Strike 2 Button",
-  args: { randomBg: true, buttonType: "Default", children: "default", buttonColor: undefined, size: 5 },
+  args: {
+    randomBg: true,
+    buttonType: "Default",
+    children: "default",
+    buttonColor: undefined,
+    size: 5,
+  },
   argTypes: {
     randomBg: {
       control: "boolean",
@@ -13,11 +19,13 @@ export default {
     buttonType: {
       control: "select",
       options: Object.keys(ButtonType),
-      description: 'The type of the button (e.g., "Default", "Success", "Danger").',
+      description:
+        'The type of the button (e.g., "Default", "Success", "Danger").',
     },
     buttonColor: {
       control: "color",
-      description: "The custom background color for the button (in hexadecimal or RGB format).",
+      description:
+        "The custom background color for the button (in hexadecimal or RGB format).",
     },
     size: {
       control: "number",
