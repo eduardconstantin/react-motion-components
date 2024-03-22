@@ -1,4 +1,6 @@
-# React Motion Components
+<div align="center">
+<img src="public/rmc.png">
+</div>
 
 React Motion Components is a collection of reusable UI components animated with framer-motion, a popular animation
 library for React and documented with storybook, a tool for developing and testing UI components in isolation.
@@ -6,10 +8,11 @@ library for React and documented with storybook, a tool for developing and testi
 <div align="center">
 <br />
 
-[![Project license](https://img.shields.io/github/license/eduardconstantin/react-motion-components?style=flat-square)](LICENSE)
 [![Contributors](https://img.shields.io/github/contributors/eduardconstantin/react-motion-components?style=flat-square)](https://github.com/eduardconstantin/react-motion-components/graphs/contributors)
 [![Issue](https://img.shields.io/github/issues/eduardconstantin/react-motion-components?style=flat-square)](https://github.com/eduardconstantin/react-motion-components/issues)
 [![PRs](https://img.shields.io/github/issues-pr/eduardconstantin/react-motion-components?style=flat-square)](https://github.com/eduardconstantin/react-motion-components/pulls)
+<br>
+[![Project license](https://img.shields.io/github/license/eduardconstantin/react-motion-components?style=flat-square)](LICENSE)
 [![Stars](https://img.shields.io/github/stars/eduardconstantin/react-motion-components?style=flat-square)](https://github.com/eduardconstantin/react-motion-components/stargazers)
 
 </div>
