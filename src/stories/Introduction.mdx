@@ -1,4 +1,4 @@
-import { Meta } from "@storybook/addon-docs";
+import { Meta } from "@storybook/blocks";
 import Portfolio from "./assets/portfolio.svg";
 import Youtube from "./assets/youtube.svg";
 import Github from "./assets/github.svg";
@@ -10,106 +10,106 @@ import X from "./assets/x.svg";
 
 <style>
   {`
-    .subheading {
-      --mediumdark: '#999999';
-      font-weight: 900;
-      font-size: 13px;
-      color: #999;
-      letter-spacing: 6px;
-      line-height: 24px;
-      text-transform: uppercase;
-      margin-bottom: 12px;
-      margin-top: 40px;
-    }
+      .subheading {
+        --mediumdark: '#999999';
+        font-weight: 900;
+        font-size: 13px;
+        color: #999;
+        letter-spacing: 6px;
+        line-height: 24px;
+        text-transform: uppercase;
+        margin-bottom: 12px;
+        margin-top: 40px;
+      }
 
-    .link-list {
-      display: grid;
-      grid-template-columns: 1fr;
-      grid-template-rows: 1fr;
-      row-gap: 10px;
-    }
-
-    @media (min-width: 620px) {
       .link-list {
-        row-gap: 20px;
-        column-gap: 20px;
-        grid-template-columns: 1fr 1fr;
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr;
+        row-gap: 10px;
       }
-    }
 
-    @media all and (-ms-high-contrast:none) {
-    .link-list {
-        display: -ms-grid;
-        -ms-grid-columns: 1fr 1fr;
-        -ms-grid-rows: 1fr 1fr;
+      @media (min-width: 620px) {
+        .link-list {
+          row-gap: 20px;
+          column-gap: 20px;
+          grid-template-columns: 1fr 1fr;
+        }
       }
-    }
 
-    .link-item {
-      display: block;
-      padding: 20px 30px 20px 15px;
-      border: 1px solid #ffffff10;
-      border-radius: 5px;
-      transition: background 150ms ease-out, border 150ms ease-out, transform 150ms ease-out;
-      color: #333333;
-      display: flex;
-      align-items: center;
-    }
+      @media all and (-ms-high-contrast:none) {
+      .link-list {
+          display: -ms-grid;
+          -ms-grid-columns: 1fr 1fr;
+          -ms-grid-rows: 1fr 1fr;
+        }
+      }
 
-    .link-item:hover {
-      border-color: #1EA7FD50;
-      transform: translate3d(0, -3px, 0);
-      box-shadow: #1EA7FD10 0 3px 10px 0;
-    }
+      .link-item {
+        display: block;
+        padding: 20px 30px 20px 15px;
+        border: 1px solid #ffffff10;
+        border-radius: 5px;
+        transition: background 150ms ease-out, border 150ms ease-out, transform 150ms ease-out;
+        color: #333333;
+        display: flex;
+        align-items: center;
+      }
 
-    .link-item:active {
-      border-color: #1EA7FD;
-      transform: translate3d(0, 0, 0);
-    }
+      .link-item:hover {
+        border-color: #1EA7FD50;
+        transform: translate3d(0, -3px, 0);
+        box-shadow: #1EA7FD10 0 3px 10px 0;
+      }
 
-    .link-item strong {
-      font-weight: 700;
-      display: block;
-      margin-bottom: 2px;
-    }
+      .link-item:active {
+        border-color: #1EA7FD;
+        transform: translate3d(0, 0, 0);
+      }
 
-    .link-item img {
-      height: 40px;
-      width: 40px;
-      margin-right: 15px;
-      flex: none;
-    }
+      .link-item strong {
+        font-weight: 700;
+        display: block;
+        margin-bottom: 2px;
+      }
 
-    .link-item span {
-      font-size: 14px;
-      line-height: 20px;
-    }
+      .link-item img {
+        height: 40px;
+        width: 40px;
+        margin-right: 15px;
+        flex: none;
+      }
 
-    .tip {
-      display: inline-block;
-      border-radius: 1em;
-      font-size: 11px;
-      line-height: 12px;
-      font-weight: 700;
-      background: #E7FDD8;
-      color: #66BF3C;
-      padding: 4px 12px;
-      margin-right: 10px;
-      vertical-align: top;
-    }
+      .link-item span {
+        font-size: 14px;
+        line-height: 20px;
+      }
 
-    .tip-wrapper {
-      font-size: 13px;
-      line-height: 20px;
-      margin-top: 40px;
-      margin-bottom: 40px;
-    }
+      .tip {
+        display: inline-block;
+        border-radius: 1em;
+        font-size: 11px;
+        line-height: 12px;
+        font-weight: 700;
+        background: #E7FDD8;
+        color: #66BF3C;
+        padding: 4px 12px;
+        margin-right: 10px;
+        vertical-align: top;
+      }
 
-    .tip-wrapper code {
-      font-size: 12px;
-      display: inline-block;
-    }
-  `}
+      .tip-wrapper {
+        font-size: 13px;
+        line-height: 20px;
+        margin-top: 40px;
+        margin-bottom: 40px;
+      }
+
+      .tip-wrapper code {
+        font-size: 12px;
+        display: inline-block;
+      }
+    `}
 </style>
 
 # Welcome to React Motion Components
@@ -126,13 +126,16 @@ find any issues or have any suggestions, please feel free to open an issue or a 
 <div className="link-list">
   <a className="link-item" href="https://github.com/eduardconstantin/react-motion-components" target="_blank">
     <img src={Repo} alt="repo" />
+
     <span>
       <strong>GitHub project</strong>
       Check the source code and add issues
     </span>
   </a>
+
   <a className="link-item" href="https://github.com/eduardconstantin" target="_blank">
     <img src={Github} alt="github" />
+
     <span>
       <strong>Github</strong>
       View the rest of open source projects I work on
@@ -145,26 +148,33 @@ find any issues or have any suggestions, please feel free to open an issue or a 
 <div className="link-list">
   <a className="link-item" href="https://eduardconstantin.github.io" target="_blank">
     <img src={Portfolio} alt="portfolio" />
+
     <span>
       <strong>Personal portfolio</strong>I have one of these too
     </span>
   </a>
+
   <a className="link-item" href="https://dribbble.com/Eduard26" target="_blank">
     <img src={Dribbble} alt="dribbble" />
+
     <span>
       <strong>Dribbble</strong>
       Check out my dribbble shots
     </span>
   </a>
+
   <a className="link-item" href="https://twitter.com/_Eduard26" target="_blank">
     <img src={X} alt="x" />
+
     <span>
       <strong>X</strong>
       Following Mr. Tweet
     </span>
   </a>
+
   <a className="link-item" href="https://www.youtube.com/channel/UC8sXMbniXCSDrbbLXev4nsQ" target="_blank">
     <img src={Youtube} alt="youtube" />
+
     <span>
       <strong>Youtube</strong>
       Sometimes I post short videos from games I play

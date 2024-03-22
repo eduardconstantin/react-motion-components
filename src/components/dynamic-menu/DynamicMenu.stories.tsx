@@ -12,7 +12,11 @@ const menuItems = [
 export default {
   title: "Components/Menus/Dynamic Menu",
   component: DynamicMenu,
-  args: { menuName: "Dynamic Menu", menuItems: menuItems, openDirection: "down" },
+  args: {
+    menuName: "Dynamic Menu",
+    menuItems: menuItems,
+    openDirection: "down",
+  },
   argTypes: {
     menuName: {
       control: "text",

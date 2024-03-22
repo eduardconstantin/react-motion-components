@@ -17,7 +17,12 @@ import Menu from "./Menu";
 export default {
   title: "Components/Menus/Navigation Menu",
   component: Menu,
-  args: { menuIcon: <BsList />, menuElements: undefined, tiltAngle: undefined, menuSize: null },
+  args: {
+    menuIcon: <BsList />,
+    menuElements: undefined,
+    tiltAngle: undefined,
+    menuSize: null,
+  },
   argTypes: {
     menuIcon: {
       control: "text",
