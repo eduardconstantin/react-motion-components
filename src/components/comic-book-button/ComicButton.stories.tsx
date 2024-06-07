@@ -1,7 +1,7 @@
 import ComicButton from "./ComicButton";
 import type { StoryObj, Meta } from "@storybook/react";
 export default {
-  title: "Components/Buttons/Comic-book Button",
+  title: "Components/Buttons/Comic-Book Button",
   args: {
     buttonName: "BUTTON",
     hoverBtnName: "BUTTON",
