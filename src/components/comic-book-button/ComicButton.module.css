@@ -1,0 +1,57 @@
+@import url('https://fonts.googleapis.com/css?family=Dekko|Lato:900|Rock+Salt');
+.btn {
+	min-width: fit-content;
+	border: none;
+	font-family: 'Dekko';
+	font-size: 24px;
+	padding: 0.3rem 1.75rem 0.2rem 1.75rem;
+	position: relative;
+	z-index: 2;
+	border: 3px solid rgb(0, 0, 0);
+	background-color: rgb(253, 217, 11);
+}
+.btn:hover{
+	cursor: url('./img/pointer.png'), auto;
+}
+.btn:active{
+	cursor: url('./img/clicked.png'), auto;
+}
+.click {
+	position: absolute;
+	width: 100%;
+	height: 64px;
+	background-image: url('./img/click.png');
+	background-size: contain;
+	background-position: center;
+	background-repeat: no-repeat;
+	top: -80px;
+	left: 0;
+	right: 0;
+}
+
+.btn::after {
+	background-color: #dfdbe5;
+	background-image: url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23c4aa12' fill-opacity='0.6' fill-rule='evenodd'%3E%3Cpath d='M0 40L40 0H20L0 20M40 40V20L20 40'/%3E%3C/g%3E%3C/svg%3E");
+	content: '';
+	width: 100%;
+	height: 100%;
+	background-size: 5%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	z-index: -3;
+}
+.btn::before {
+	content: '';
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	box-shadow: inset 0px 0px 50px rgb(253, 217, 11);
+	z-index: -2;
+}
