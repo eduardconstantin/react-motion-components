@@ -1,25 +1,11 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { motion } from "framer-motion";
 import { buttonAnim, clickAnim } from "./ComicButton.anim";
+import { RANDOM_INT } from "../helpers";
+import { ComicButtonProps } from "./ComicButton.d";
 import style from "./ComicButton.module.css";
 
-interface ComicButtonProps {
-  buttonName: string;
-  hoverBtnName: string;
-  btnClassName?: string;
-  handleButtonClick: () => void;
-}
-
-const randomNo = (min: number, max: number) => {
-  return min + Math.floor(Math.random() * (max - min));
-};
-
-export default function ComicButton({
-  buttonName,
-  hoverBtnName,
-  btnClassName,
-  handleButtonClick,
-}: ComicButtonProps) {
+export default function ComicButton({ buttonName, hoverBtnName, btnClassName, handleButtonClick }: ComicButtonProps) {
   const [btnName, setBtnName] = useState(buttonName);
 
   return (
@@ -32,17 +18,13 @@ export default function ComicButton({
       whileTap="tap"
       whileFocus="focus"
       variants={buttonAnim}
-      custom={randomNo(6, 12)}
+      custom={RANDOM_INT(6, 12)}
       onMouseEnter={() => setBtnName(hoverBtnName)}
       onMouseLeave={() => setBtnName(buttonName)}
-      onClick={() => handleButtonClick()}
+      onClick={handleButtonClick}
     >
       {btnName}
-      <motion.div
-        className={style.click}
-        variants={clickAnim}
-        custom={randomNo(-50, 50)}
-      ></motion.div>
+      <motion.div className={style.click} variants={clickAnim} custom={RANDOM_INT(-50, 50)}></motion.div>
     </motion.button>
   );
 }
