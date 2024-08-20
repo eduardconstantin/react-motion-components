@@ -1,0 +1,92 @@
+.header {
+  display: flex;
+  justify-content: center;
+  /* position: fixed; */
+  width: 100%;
+  margin-top: 10px;
+  color: white;
+  font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
+  /* filter: url(#goo); */
+}
+.mainBar {
+  width: 32%;
+  height: 50px;
+  background: black;
+  border-radius: 30px;
+  z-index: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.mainBar ul {
+  display: flex;
+  height: 100%;
+  margin: 0;
+  flex-direction: row;
+  gap: 15px;
+  align-content: center;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  list-style: none;
+}
+.mainBar ul li {
+  color: white;
+  cursor: pointer;
+  position: relative;
+}
+
+.mainBar ul li span {
+  width: 5px;
+  height: 5px;
+  background-color: grey;
+  position: absolute;
+  border-radius: 50%;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  bottom: -5px;
+}
+
+.dots {
+  min-width: 50px;
+  height: 40px;
+  background: black;
+  display: flex;
+  align-items: center;
+  position: absolute;
+  z-index: 2;
+  border-radius: 25px;
+  overflow: hidden;
+}
+.dots:first-child {
+  left: 34.3%;
+}
+.dots:last-child {
+  right: 34.3%;
+  border: 1px solid grey;
+}
+.dots:first-child p {
+  filter: invert(1);
+}
+.dots p,
+img {
+  color: white;
+  font-weight: bold;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(255, 116, 116);
+  margin: 0;
+  z-index: 2;
+  position: relative;
+}
+
+.dots span {
+  padding: 0 10px 0 37px;
+  position: absolute;
+  width: max-content;
+}
