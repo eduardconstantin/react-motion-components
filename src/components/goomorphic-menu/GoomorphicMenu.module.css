@@ -1,18 +1,28 @@
+.section {
+  height: 100vh;
+  border-bottom: 1px solid black;
+  background: rgb(119, 119, 255);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .header {
   display: flex;
   justify-content: center;
-  /* position: fixed; */
+  position: fixed;
   width: 100%;
   margin-top: 10px;
   color: white;
   font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
-  /* filter: url(#goo); */
+  filter: url("data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter%20id='goo'%3E%3CfeGaussianBlur%20in='SourceAlpha'%20stdDeviation='10'%20result='blurred'/%3E%3CfeColorMatrix%20in='blurred'%20mode='matrix'%20values='1%200%200%200%200%200%201%200%200%200%200%200%201%200%200%200%200%200%2040%20-15'%20result='gooey'/%3E%3CfeComposite%20in='SourceGraphic'%20in2='gooey'%20operator='atop'/%3E%3C/filter%3E%3C/svg%3E#goo");
 }
+
 .mainBar {
   width: 32%;
   height: 50px;
   background: black;
-  border-radius: 30px;
+  border-radius: 20px;
   z-index: 0;
   display: flex;
   align-items: center;
@@ -58,12 +68,13 @@
   z-index: 2;
   border-radius: 25px;
   overflow: hidden;
+  cursor: pointer;
 }
 .dots:first-child {
-  left: 34.3%;
+  left: 34.7%;
 }
 .dots:last-child {
-  right: 34.3%;
+  right: 34.7%;
   border: 1px solid grey;
 }
 .dots:first-child p {
