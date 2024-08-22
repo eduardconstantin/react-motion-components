@@ -2,7 +2,7 @@ import { useState, FC } from "react";
 import { motion } from "framer-motion";
 import GoomorphicMenu from "./GoomorphicMenu";
 import styles from "./GoomorphicMenu.module.css";
-import { ContentWrapperProps } from "./GoomorphicMenu.d";
+import { ContentWrapperProps, Section } from "./GoomorphicMenu.d";
 
 const ContentWrapper: FC<ContentWrapperProps> = ({ sections }) => {
   const [section, setSection] = useState<string>(sections[0].id);
@@ -10,7 +10,7 @@ const ContentWrapper: FC<ContentWrapperProps> = ({ sections }) => {
   return (
     <div>
       <GoomorphicMenu section={section} sections={sections} />
-      {sections.map((sec) => (
+      {sections.map((sec: Section) => (
         <motion.div
           key={sec.key}
           viewport={{ once: true, amount: 0.9 }}
