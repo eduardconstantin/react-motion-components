@@ -1,5 +1,5 @@
 import type { StoryObj, Meta } from "@storybook/react";
-import GoomorphicMenu from "./GoomorphicMenu";
+import ContentWrapper from "./ContentWrapper";
 
 const sections = [
   { id: "Home", key: "home" },
@@ -11,19 +11,20 @@ const sections = [
 
 export default {
   title: "Components/Menus/Goomorphic Menu",
-  component: GoomorphicMenu,
+  component: ContentWrapper,
   args: {
-    section: sections[0].id,
     sections: sections,
   },
+  parameters: {
+    layout: "fullscreen",
+  },
   argTypes: {},
-} as Meta<typeof GoomorphicMenu>;
+} as Meta<typeof ContentWrapper>;
 
-type Story = StoryObj<typeof GoomorphicMenu>;
+type Story = StoryObj<typeof ContentWrapper>;
 
 export const Default: Story = {
   argTypes: {
-    section: { control: false },
     sections: { control: false },
   },
 };
