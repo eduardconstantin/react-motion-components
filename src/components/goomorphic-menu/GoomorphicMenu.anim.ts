@@ -18,25 +18,25 @@ export const span = {
 
 export const leftDot = {
   home: {
-    left: "35%",
+    left: "34.7%",
     height: 38,
     padding: "0px 85px 0px 5px",
     justifyContent: "flex-start",
   },
   about: {
-    left: "38%",
+    left: "37.5%",
     height: 50,
     padding: "0px 0px 0px 0px",
     justifyContent: "center",
   },
   features: {
-    left: "38%",
+    left: "37.5%",
     height: 50,
     padding: "0px 0px 0px 0px",
     justifyContent: "center",
   },
   pricing: {
-    left: "38%",
+    left: "37.5%",
     height: 50,
     padding: "0px 0px 0px 0px",
     justifyContent: "center",
@@ -46,18 +46,19 @@ export const leftDot = {
     height: 50,
     padding: "0px 150px 0 10px",
     justifyContent: "flex-start",
+    borderRadius: "20px",
   },
 };
 export const rightDot = {
   home: {
-    right: "35%",
+    right: "34.7%",
     height: 38,
     border: "1px solid grey",
     padding: "0px 75px 0 5px",
     justifyContent: "flex-start",
   },
   about: {
-    right: "38%",
+    right: "37.5%",
     height: 50,
     border: "0px solid transparent",
     padding: "0px 0px 0px 0px",
@@ -65,31 +66,32 @@ export const rightDot = {
     transition: { type: "spring", duration: 1, border: { duration: 0.1 } },
   },
   features: {
-    right: "38%",
+    right: "37.5%",
     height: 50,
     border: "0px solid transparent",
     padding: "0px 0px 0px 0px",
     justifyContent: "center",
   },
   pricing: {
-    right: "38%",
+    right: "37.5%",
     height: 50,
     border: "0px solid transparent",
     padding: "0px 0px 0px 0px",
     justifyContent: "center",
   },
   contact: {
-    right: "40%",
+    right: "37%",
     height: 50,
     border: "0px solid transparent",
     padding: "0px 68px 0 10px",
     justifyContent: "flex-start",
+    borderRadius: "22px",
   },
 };
 
 export const mainBar = {
   home: {
-    width: 500,
+    width: "31vw",
   },
   about: {
     width: 250,
@@ -101,7 +103,7 @@ export const mainBar = {
     width: 250,
   },
   contact: {
-    width: 70,
+    width: 50,
     transition: { delay: 0.25 },
   },
 };
