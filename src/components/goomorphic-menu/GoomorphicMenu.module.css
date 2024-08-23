@@ -1,0 +1,112 @@
+.section {
+  height: 100vh;
+  border-bottom: 1px solid black;
+  background: linear-gradient(#ffbe98, #f1a97f);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+.section h1 {
+  font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
+  font-size: 20rem;
+  color: white;
+  user-select: none;
+}
+
+.header {
+  display: flex;
+  justify-content: center;
+  position: fixed;
+  width: 100%;
+  margin-top: 10px;
+  color: white;
+  font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
+  filter: url("data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter%20id='goo'%3E%3CfeGaussianBlur%20in='SourceAlpha'%20stdDeviation='10'%20result='blurred'/%3E%3CfeColorMatrix%20in='blurred'%20mode='matrix'%20values='1%200%200%200%200%200%201%200%200%200%200%200%201%200%200%200%200%200%2040%20-15'%20result='gooey'/%3E%3CfeComposite%20in='SourceGraphic'%20in2='gooey'%20operator='atop'/%3E%3C/filter%3E%3C/svg%3E#goo");
+}
+
+.mainBar {
+  width: 32%;
+  height: 50px;
+  background: black;
+  border-radius: 20px;
+  z-index: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.mainBar ul {
+  display: flex;
+  height: 100%;
+  margin: 0;
+  flex-direction: row;
+  gap: 15px;
+  align-content: center;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  list-style: none;
+}
+.mainBar ul li {
+  color: white;
+  cursor: pointer;
+  position: relative;
+}
+
+.mainBar ul li span {
+  width: 5px;
+  height: 5px;
+  background-color: grey;
+  position: absolute;
+  border-radius: 50%;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  bottom: -5px;
+}
+
+.dots {
+  min-width: 50px;
+  height: 40px;
+  background: black;
+  display: flex;
+  align-items: center;
+  position: absolute;
+  z-index: 2;
+  border-radius: 25px;
+  overflow: hidden;
+  cursor: pointer;
+}
+.dots:first-child {
+  left: 34.7%;
+}
+.dots:first-child p {
+  filter: invert(1);
+}
+
+.dots:last-child {
+  right: 34.7%;
+  border: 1px solid grey;
+}
+
+.dots p,
+img {
+  color: white;
+  font-weight: bold;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(157, 38, 194);
+  margin: 0;
+  z-index: 2;
+  position: relative;
+}
+
+.dots span {
+  padding: 0 10px 0 37px;
+  position: absolute;
+  width: max-content;
+}
