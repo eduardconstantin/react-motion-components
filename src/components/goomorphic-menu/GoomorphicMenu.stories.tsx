@@ -28,10 +28,3 @@ export const Default: Story = {
     sections: { control: false },
   },
 };
-
-export const OpenUp: Story = {
-  args: {
-    ...Default.args,
-  },
-  argTypes: Default.argTypes,
-};
