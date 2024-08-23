@@ -1,10 +1,17 @@
 .section {
   height: 100vh;
   border-bottom: 1px solid black;
-  background: rgb(119, 119, 255);
+  background: linear-gradient(#ffbe98, #f1a97f);
   display: flex;
   justify-content: center;
   align-items: center;
+  overflow: hidden;
+}
+.section h1 {
+  font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
+  font-size: 20rem;
+  color: white;
+  user-select: none;
 }
 
 .header {
@@ -73,13 +80,15 @@
 .dots:first-child {
   left: 34.7%;
 }
+.dots:first-child p {
+  filter: invert(1);
+}
+
 .dots:last-child {
   right: 34.7%;
   border: 1px solid grey;
 }
-.dots:first-child p {
-  filter: invert(1);
-}
+
 .dots p,
 img {
   color: white;
@@ -90,7 +99,7 @@ img {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: rgb(255, 116, 116);
+  background-color: rgb(157, 38, 194);
   margin: 0;
   z-index: 2;
   position: relative;
