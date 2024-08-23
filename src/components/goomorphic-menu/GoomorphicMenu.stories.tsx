@@ -1,5 +1,5 @@
 import type { StoryObj, Meta } from "@storybook/react";
-import ContentWrapper from "./ContentWrapper";
+import ContentWrapper from "./components/ContentWrapper";
 
 const sections = [
   { id: "Home", key: "home" },
