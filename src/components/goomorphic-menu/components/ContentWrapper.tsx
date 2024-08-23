@@ -1,8 +1,8 @@
 import { useState, FC } from "react";
 import { motion } from "framer-motion";
-import GoomorphicMenu from "./GoomorphicMenu";
-import styles from "./GoomorphicMenu.module.css";
-import { ContentWrapperProps, Section } from "./GoomorphicMenu.d";
+import GoomorphicMenu from "../GoomorphicMenu";
+import styles from "../GoomorphicMenu.module.css";
+import { ContentWrapperProps, Section } from "../GoomorphicMenu.d";
 
 const ContentWrapper: FC<ContentWrapperProps> = ({ sections }) => {
   const [section, setSection] = useState<string>(sections[0].id);
