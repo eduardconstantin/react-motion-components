@@ -18,31 +18,31 @@ export const span = {
 
 export const leftDot = {
   home: {
-    left: "34.7%",
+    left: "calc(50% - 140px/2 - 175px)",
     height: 38,
     padding: "0px 85px 0px 5px",
     justifyContent: "flex-start",
   },
   about: {
-    left: "37.5%",
+    left: "calc(50% - 50px/2 - 179px)",
     height: 50,
     padding: "0px 0px 0px 0px",
     justifyContent: "center",
   },
   features: {
-    left: "37.5%",
+    left: "calc(50% - 50px/2 - 179px)",
     height: 50,
     padding: "0px 0px 0px 0px",
     justifyContent: "center",
   },
   pricing: {
-    left: "37.5%",
+    left: "calc(50% - 50px/2 - 179px)",
     height: 50,
     padding: "0px 0px 0px 0px",
     justifyContent: "center",
   },
   contact: {
-    left: "40%",
+    left: "calc(50% - 210px/2 - 120px)",
     height: 50,
     padding: "0px 150px 0 10px",
     justifyContent: "flex-start",
@@ -51,14 +51,14 @@ export const leftDot = {
 };
 export const rightDot = {
   home: {
-    right: "34.7%",
+    right: "calc(50% - 132px/2 - 179px)",
     height: 38,
     border: "1px solid grey",
     padding: "0px 75px 0 5px",
     justifyContent: "flex-start",
   },
   about: {
-    right: "37.5%",
+    right: "calc(50% - 50px/2 - 179px)",
     height: 50,
     border: "0px solid transparent",
     padding: "0px 0px 0px 0px",
@@ -66,21 +66,21 @@ export const rightDot = {
     transition: { type: "spring", duration: 1, border: { duration: 0.1 } },
   },
   features: {
-    right: "37.5%",
+    right: "calc(50% - 50px/2 - 179px)",
     height: 50,
     border: "0px solid transparent",
     padding: "0px 0px 0px 0px",
     justifyContent: "center",
   },
   pricing: {
-    right: "37.5%",
+    right: "calc(50% - 50px/2 - 179px)",
     height: 50,
     border: "0px solid transparent",
     padding: "0px 0px 0px 0px",
     justifyContent: "center",
   },
   contact: {
-    right: "37%",
+    right: "calc(50% - 128px/2 - 130px)",
     height: 50,
     border: "0px solid transparent",
     padding: "0px 68px 0 10px",
@@ -91,7 +91,7 @@ export const rightDot = {
 
 export const mainBar = {
   home: {
-    width: "31vw",
+    width: 500,
   },
   about: {
     width: 250,
@@ -103,7 +103,7 @@ export const mainBar = {
     width: 250,
   },
   contact: {
-    width: 50,
+    width: 80,
     transition: { delay: 0.25 },
   },
 };
