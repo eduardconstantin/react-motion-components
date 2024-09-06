@@ -14,7 +14,5 @@ module.exports = {
 
   features: {},
 
-  docs: {
-    autodocs: true,
-  },
+  docs: {},
 };

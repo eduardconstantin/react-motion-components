@@ -22,3 +22,4 @@ export const parameters = {
     theme: themes.dark,
   },
 };
+export const tags = ["autodocs"];
