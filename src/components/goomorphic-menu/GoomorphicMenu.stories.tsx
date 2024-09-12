@@ -12,6 +12,7 @@ const sections = [
 export default {
   title: "Components/Menus/Goomorphic Menu",
   component: ContentWrapper,
+  tags: ["!autodocs"],
   args: {
     sections: sections,
   },
