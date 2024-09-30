@@ -1,8 +1,9 @@
-import { card, hr, socials, meta, text } from "./GoomorphicCard.anim";
+import { FC } from "react";
 import { motion } from "framer-motion";
+import { card, hr, socials, meta, text } from "./GoomorphicCard.anim";
 import styles from "./GoomorphicCard.module.css";
 
-export default function GoomorphicCard() {
+const GoomorphicCard: FC = () => {
   return (
     <motion.div className={styles.card} variants={card} initial="init" whileHover="anim">
       <div className={styles.container}>
@@ -51,4 +52,6 @@ export default function GoomorphicCard() {
       </div>
     </motion.div>
   );
-}
+};
+
+export default GoomorphicCard;
