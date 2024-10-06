@@ -1,4 +1,6 @@
-export const card = {
+import { Variants, Variant } from "framer-motion";
+
+export const card: Variants = {
   init: {
     backgroundSize: "120%",
     backgroundPosition: "50% 100%",
@@ -12,7 +14,7 @@ export const card = {
   },
 };
 
-export const hr = {
+export const hr: Variants = {
   init: {
     opacity: 0,
   },
@@ -22,7 +24,7 @@ export const hr = {
   },
 };
 
-export const text = {
+export const text: Variants = {
   init: {
     filter: "blur(5px)",
     color: "rgba(255,0,0,1)",
@@ -34,7 +36,7 @@ export const text = {
   },
 };
 
-export const socials = {
+export const socials: Variants & { [key: string]: any } = {
   init: {
     height: 40,
     "--mask":
@@ -58,7 +60,7 @@ export const socials = {
   },
 };
 
-export const meta = {
+export const meta: Variants & { [key: string]: any } = {
   init: {
     bottom: [-30, -30, -30],
     height: [40, 40, 40],
