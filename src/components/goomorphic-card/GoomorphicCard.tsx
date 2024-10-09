@@ -1,11 +1,22 @@
 import { FC } from "react";
 import { motion } from "framer-motion";
 import { card, hr, socials, meta, text } from "./GoomorphicCard.anim";
+import { DataType } from "./GoomorphicCard.d";
 import styles from "./GoomorphicCard.module.css";
 
-const GoomorphicCard: FC = () => {
+const GoomorphicCard: FC<DataType> = (data: DataType) => {
+  const { location, device, name, user, url } = data;
+
   return (
-    <motion.div className={styles.card} variants={card} initial="init" whileHover="anim">
+    <motion.div
+      className={styles.card}
+      variants={card}
+      initial="init"
+      whileHover="anim"
+      style={{
+        backgroundImage: `url(${url})`,
+      }}
+    >
       <div className={styles.container}>
         <motion.div className={styles.meta} variants={meta}>
           <motion.p variants={text}>
@@ -23,11 +34,11 @@ const GoomorphicCard: FC = () => {
                 </g>
               </g>
             </svg>
-            <span>Bogliasco, Italy</span>
+            <span>{location}</span>
           </motion.p>
 
           <motion.p variants={text}>
-            <span>FUJIFILM, X-T30 II</span>
+            <span>{device}</span>
             <svg viewBox="0 -2 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg">
               <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
               <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
@@ -46,8 +57,8 @@ const GoomorphicCard: FC = () => {
         </motion.div>
         <motion.div className={styles.socials} variants={socials}>
           <motion.hr variants={hr} />
-          <p>Grigorii Shcheglov</p>
-          <p>@shegiva on Unsplash</p>
+          <p>{name}</p>
+          <p>{user} on Unsplash</p>
         </motion.div>
       </div>
     </motion.div>
