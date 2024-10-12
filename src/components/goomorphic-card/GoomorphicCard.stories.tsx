@@ -13,6 +13,10 @@ export default {
   },
   parameters: {
     layout: "centered",
+    backgrounds: {
+      values: [{ name: "Orange", value: "#f1a97f" }],
+      default: "Orange",
+    },
   },
   argTypes: {},
 } as Meta<typeof GoomorphicCard>;
