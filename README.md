@@ -20,12 +20,14 @@ library for React and documented with storybook, a tool for developing and testi
 ## 🧩 Components
 
 <div align="center">
-  <h3 align="center">Goomorphic Menu</h3>
-  <img align="center" height="300px" src="https://cdn.dribbble.com/userupload/16249760/file/original-f9f8054776c4ef1409b03e7cea6033d2.gif"/> 
+  <h3 align="center">Goomorphic Card</h3>
+  <img align="center" height="300px" src="https://cdn.dribbble.com/userupload/17062044/file/original-9946e0717b4acea0d96cc8529ba546a2.gif"/> 
   <br>
   <details align="center">
     <summary>Click for more</summary>
     <pre>
+      <h3 align="center">Goomorphic Menu</h3>
+      <img align="center" height="300px" src="https://cdn.dribbble.com/userupload/16249760/file/original-f9f8054776c4ef1409b03e7cea6033d2.gif"/> 
       <h3 align="center">Counter-Strike Button</h3>
       <img align="center" height="300px" src="https://cdn.dribbble.com/userupload/9956491/file/original-1c3263055d59db01e43678d5d5b8e71a.gif"/> 
       <h3 align="center">✨Framer AI Button</h3>
