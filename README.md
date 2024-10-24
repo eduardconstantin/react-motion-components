@@ -27,17 +27,17 @@ library for React and documented with storybook, a tool for developing and testi
     <summary>Click for more</summary>
     <pre>
       <h3 align="center">Goomorphic Menu</h3>
-      <img align="center" height="300px" src="https://cdn.dribbble.com/userupload/16249760/file/original-f9f8054776c4ef1409b03e7cea6033d2.gif"/> 
+      <img align="center" height="200px" src="https://cdn.dribbble.com/userupload/16249760/file/original-f9f8054776c4ef1409b03e7cea6033d2.gif"/> 
       <h3 align="center">Counter-Strike Button</h3>
-      <img align="center" height="300px" src="https://cdn.dribbble.com/userupload/9956491/file/original-1c3263055d59db01e43678d5d5b8e71a.gif"/> 
+      <img align="center" height="200px" src="https://cdn.dribbble.com/userupload/9956491/file/original-1c3263055d59db01e43678d5d5b8e71a.gif"/> 
       <h3 align="center">✨Framer AI Button</h3>
-      <img align="center" height="300px" src="https://cdn.dribbble.com/userupload/5766170/file/original-8c76fbedd0ced146fff4c572616a6b4d.gif"/>
+      <img align="center" height="200px" src="https://cdn.dribbble.com/userupload/5766170/file/original-8c76fbedd0ced146fff4c572616a6b4d.gif"/>
       <h3 align="center">Comic-Book Button</h3>
-      <img align="center" height="300px" src="public/assets/comicbtn.gif"/>
+      <img align="center" height="200px" src="public/assets/comicbtn.gif"/>
       <h3 align="center">Navigation Menu</h3>
-      <img align="center" height="300px" src="public/assets/menu.gif"/>
+      <img align="center" height="200px" src="public/assets/menu.gif"/>
       <h3 align="center">Dynamic Menu</h3>
-      <img align="center" height="300px" src="public/assets/dynMenu.gif"/>
+      <img align="center" height="200px" src="public/assets/dynMenu.gif"/>
     </pre>
   </details>
   
