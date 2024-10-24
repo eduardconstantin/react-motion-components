@@ -21,7 +21,7 @@ library for React and documented with storybook, a tool for developing and testi
 
 <div align="center">
   <h3 align="center">Goomorphic Card</h3>
-  <img align="center" height="300px" src="https://cdn.dribbble.com/userupload/17062044/file/original-9946e0717b4acea0d96cc8529ba546a2.gif"/> 
+  <img align="center" height="300px" src="https://cdn.dribbble.com/userupload/17062044/file/original-688c4d8e44a27791bb409b87f7b2314d.gif"/> 
   <br>
   <details align="center">
     <summary>Click for more</summary>
