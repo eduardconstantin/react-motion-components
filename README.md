@@ -6,7 +6,8 @@ React Motion Components is a collection of reusable UI components animated with 
 library for React and documented with storybook, a tool for developing and testing UI components in isolation.
 
 <div align="center">
-<br />
+  
+[<img src="https://api.gitsponsors.com/api/badge/img?id=607297394" height="40">](https://api.gitsponsors.com/api/badge/link?p=2vnj8aEA/PkOSF+cWYCXK3vOEDIksSX314/hUl7EMORBrWKKWSa+flYQNb2wpkogJ+Ql05A8RMisjpOh5IpWYTMvu5tbTX6HI640j0sT74c73leny4Pv72dL5BbPzE9U4EsitTapybBeIc97oMRUgQ==)
 
 [![Contributors](https://img.shields.io/github/contributors/eduardconstantin/react-motion-components?style=flat-square)](https://github.com/eduardconstantin/react-motion-components/graphs/contributors)
 [![Issue](https://img.shields.io/github/issues/eduardconstantin/react-motion-components?style=flat-square)](https://github.com/eduardconstantin/react-motion-components/issues)
