@@ -1,7 +1,7 @@
 import { themes } from "@storybook/theming";
 
 export const parameters = {
-  actions: { argTypesRegex: "^on[A-Z].*" },
+  actions: {},
   controls: {
     matchers: {
       color: /(background|color)$/i,
@@ -22,4 +22,4 @@ export const parameters = {
     theme: themes.dark,
   },
 };
-export const tags = ["autodocs"];
+// export const tags = ["autodocs"];

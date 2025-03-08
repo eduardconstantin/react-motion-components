@@ -5,6 +5,7 @@ module.exports = {
     "@storybook/addon-links",
     "@storybook/addon-essentials",
     "@storybook/addon-interactions",
+    "@chromatic-com/storybook",
   ],
 
   framework: {
@@ -14,5 +15,11 @@ module.exports = {
 
   features: {},
 
-  docs: {},
+  docs: {
+    autodocs: true,
+  },
+
+  typescript: {
+    reactDocgen: "react-docgen-typescript",
+  },
 };
