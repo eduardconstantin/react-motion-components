@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Anton&family=Antonio:wght@100..700&display=swap");
+
 :root {
   --color1: rgb(238, 198, 36);
   --color2: rgb(254, 222, 51);
@@ -5,7 +7,6 @@
 }
 
 .button {
-  font-family: sans-serif;
   --triangle-offset-top: -40px;
   --mask-size: 0px;
   position: relative;
@@ -13,14 +14,15 @@
   border: 0;
   color: #000;
   background-color: transparent;
-  padding: 0.5rem 0.5rem;
+  padding: 0.5rem 1rem;
+  min-width: 15rem;
   font-size: 2rem;
   text-transform: uppercase;
   font-weight: 400;
   font-family: "Anton", serif;
   letter-spacing: 0.04em;
   z-index: 99;
-  filter: hue-rotate(0deg);
+  /* filter: hue-rotate(0deg); */
 }
 
 .button div {
