@@ -1,11 +1,12 @@
 import { FC } from "react";
+import { ButtonProps } from "./Button.d";
 import S from "./Button.module.css";
 
-const Button: FC = () => {
+const Button: FC<ButtonProps> = ({ text = "JOIN NOW", buttonColor = 0 }) => {
   return (
-    <button className={S.button}>
+    <button className={S.button} style={{ filter: `hue-rotate(${buttonColor}deg)` }}>
       <div />
-      JOIN NOW
+      {text}
     </button>
   );
 };
