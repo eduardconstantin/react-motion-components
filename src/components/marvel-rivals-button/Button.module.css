@@ -14,7 +14,7 @@
   border: 0;
   color: #000;
   background-color: transparent;
-  padding: 0.5rem 1rem;
+  padding: 0.5rem 2rem;
   min-width: 15rem;
   font-size: 2rem;
   text-transform: uppercase;
@@ -22,7 +22,6 @@
   font-family: "Anton", serif;
   letter-spacing: 0.04em;
   z-index: 99;
-  /* filter: hue-rotate(0deg); */
 }
 
 .button div {
