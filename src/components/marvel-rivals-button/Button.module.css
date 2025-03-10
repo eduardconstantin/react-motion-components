@@ -1,0 +1,199 @@
+@import url("https://fonts.googleapis.com/css2?family=Anton&family=Antonio:wght@100..700&display=swap");
+
+:root {
+  --color1: rgb(238, 198, 36);
+  --color2: rgb(254, 222, 51);
+  --color3: rgb(253, 232, 67);
+}
+
+.button {
+  --triangle-offset-top: -40px;
+  --mask-size: 0px;
+  position: relative;
+  appearance: none;
+  border: 0;
+  color: #000;
+  background-color: transparent;
+  padding: 0.5rem 1rem;
+  min-width: 15rem;
+  font-size: 2rem;
+  text-transform: uppercase;
+  font-weight: 400;
+  font-family: "Anton", serif;
+  letter-spacing: 0.04em;
+  z-index: 99;
+  /* filter: hue-rotate(0deg); */
+}
+
+.button div {
+  opacity: 0;
+  transition: all 0.05s;
+  top: -10px;
+  bottom: -10px;
+  left: -10px;
+  right: -10px;
+  position: absolute;
+  background: var(--color1);
+  z-index: 90;
+  pointer-events: none;
+  filter: contrast(0.8);
+  clip-path: polygon(
+    50% 50%,
+    /*bottom left*/ 6px calc(100% - 3px),
+    45px calc(100% - 16px),
+    15px calc(100% - 12px),
+    14px calc(100% - 35px),
+    6px calc(100% - 3px),
+    /*bottom left*/ 50% 50%,
+    /*top right*/ calc(100% - 50px) 19px,
+    calc(100% - 10px) 5px,
+    calc(100% - 17px) 45px,
+    calc(100% - 15px) 14px,
+    calc(100% - 50px) 19px,
+    /*top right*/ 50% 50%,
+    /*top left*/ 20px 40px,
+    14px 11px,
+    35px 13px,
+    2px 0,
+    20px 40px,
+    /*top left*/ 50% 50%,
+    50% 50%,
+    /*bottom right*/ calc(100% - 50px) calc(100% - 13px),
+    calc(100% - 6px) calc(100% - 3px),
+    calc(100% - 15px) calc(100% - 30px),
+    calc(100% - 13px) calc(100% - 11px),
+    calc(100% - 50px) calc(100% - 13px) /*bottom right*/
+  );
+}
+
+.button:focus-within div {
+  opacity: 0;
+  top: -10px;
+  bottom: -10px;
+  left: -10px;
+  right: -10px;
+}
+
+.button:focus-within:active div {
+  opacity: 1;
+  top: -17px;
+  bottom: -17px;
+  left: -17px;
+  right: -17px;
+}
+
+.button:hover::before {
+  clip-path: polygon(15px 0, calc(100% - 8px) 0, calc(100% - 15px) 100%, 8px 100%);
+}
+.button:hover::after {
+  opacity: 1;
+  --triangle-offset-top: 0px;
+  animation: 1s squiggle 0.3s infinite;
+}
+
+.button::before {
+  content: " ";
+  background-color: transparent;
+  background: linear-gradient(
+      -30deg,
+      var(--color1) 20px,
+      var(--color2) 21px,
+      var(--color2) 24px,
+      var(--color1) 25px,
+      var(--color1) 29px,
+      transparent 30px
+    ),
+    linear-gradient(50deg, var(--color3) 30px, transparent 31px),
+    linear-gradient(
+      140deg,
+      var(--color3) 20px,
+      var(--color2) 21px,
+      var(--color2) 24px,
+      var(--color3) 25px,
+      var(--color3) 29px,
+      var(--color2) 30px
+    );
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: -1;
+  clip-path: polygon(0px 0, 100% 0, 100% 100%, 0px 100%);
+  transition: clip-path 0.09s;
+}
+
+.button::after {
+  pointer-events: none;
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  opacity: 0;
+  background: var(--color3);
+  background: linear-gradient(
+      -30deg,
+      var(--color1) 20px,
+      var(--color2) 21px,
+      var(--color2) 24px,
+      var(--color1) 25px,
+      var(--color1) 29px,
+      transparent 30px
+    ),
+    linear-gradient(50deg, var(--color3) 30px, transparent 31px),
+    linear-gradient(
+      140deg,
+      var(--color3) 20px,
+      var(--color2) 21px,
+      var(--color2) 24px,
+      var(--color3) 25px,
+      var(--color3) 29px,
+      var(--color2) 30px
+    );
+  clip-path: polygon(
+    0px 0,
+    0px 100%,
+    5px 100%,
+    11px 0,
+    calc(100% - 5px) 0,
+    calc(100% - 11px) 100%,
+    100% 100%,
+    100% 0,
+    0px 0
+  );
+  transform: translate(0, var(--triangle-offset-top));
+  transition: opacity 0.07s, transform 0.15s cubic-bezier(0.35, 2.5, 0.65, 1);
+}
+
+@keyframes squiggle {
+  0% {
+    margin: 0;
+  }
+  12.5% {
+    margin: 2px -1px -2px 1px;
+  }
+  25% {
+    margin: -2px 1px 2px -1px;
+  }
+  37.5% {
+    margin: 1px 2px -1px -2px;
+  }
+  50% {
+    margin: -1px -2px 1px 2px;
+  }
+  62.5% {
+    margin: 2px 0px 1px -2px;
+  }
+  75% {
+    margin: -1px -1px -2px 0px;
+  }
+  87.5% {
+    margin: 0px 1px 2px -1px;
+  }
+  100% {
+    margin: 0;
+  }
+}
