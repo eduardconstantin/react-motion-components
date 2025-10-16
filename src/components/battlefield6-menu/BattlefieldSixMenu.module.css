@@ -9,6 +9,7 @@
   border-bottom: 1px solid rgba(156, 163, 175, 0.5);
   font-family: "Quantico", serif;
   font-weight: 500;
+  position: fixed;
 }
 
 .leftIcon {
@@ -17,6 +18,10 @@
   background-color: #f3f4f6;
   display: grid;
   place-items: center;
+  color: black;
+  font-size: 2rem;
+  font-weight: 700;
+  user-select: none;
 }
 
 .nav {
@@ -75,7 +80,6 @@
   bottom: -1px;
   height: 3px;
   background-color: #c7d2d6;
-  transition: all 0.2s ease-out;
   width: 0;
   left: 50%;
 }
@@ -134,5 +138,23 @@
 .rightBox {
   aspect-ratio: 1 / 1;
   height: 100%;
-  background-color: #f87171;
+  background-color: #705236;
+  display: grid;
+  place-items: center;
+}
+
+.section {
+  height: 100vh;
+  border-bottom: 1px solid black;
+  background: linear-gradient(#ffbe98, #f1a97f);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+.section h1 {
+  font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
+  font-size: 20rem;
+  color: white;
+  user-select: none;
 }

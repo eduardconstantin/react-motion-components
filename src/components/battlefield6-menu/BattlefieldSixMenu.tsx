@@ -1,5 +1,5 @@
-import { useState, useEffect } from "react";
 import styles from "./BattlefieldSixMenu.module.css";
+import { AnimatePresence, motion, animate } from "framer-motion";
 
 type MenuItem = {
   label: string;
@@ -8,28 +8,15 @@ type MenuItem = {
 
 interface BattlefieldSixMenuProps {
   menuItems: MenuItem[];
+  activeIndex: number;
+  setActiveIndex: (index: number) => void;
 }
 
-const BattlefieldSixMenu = ({ menuItems }: BattlefieldSixMenuProps) => {
-  const [activeIndex, setActiveIndex] = useState(0);
-
-  useEffect(() => {
-    const handleKeyDown = (e: KeyboardEvent) => {
-      const key = e.key.toLowerCase();
-      if (key === "q") {
-        setActiveIndex((prev) => (prev === 0 ? menuItems.length - 1 : prev - 1));
-      } else if (key === "e") {
-        setActiveIndex((prev) => (prev === menuItems.length - 1 ? 0 : prev + 1));
-      }
-    };
-
-    window.addEventListener("keydown", handleKeyDown);
-    return () => window.removeEventListener("keydown", handleKeyDown);
-  }, [menuItems]);
-
+const BattlefieldSixMenu = ({ menuItems, setActiveIndex, activeIndex }: BattlefieldSixMenuProps) => {
   return (
+    // <AnimatePresence mode="wait">
     <div className={styles.container}>
-      <div className={styles.leftIcon}>{/* svg unchanged */}</div>
+      <div className={styles.leftIcon}>ED</div>
 
       <nav className={styles.nav}>
         <div className={styles.keyHint}>
@@ -50,14 +37,24 @@ const BattlefieldSixMenu = ({ menuItems }: BattlefieldSixMenuProps) => {
             >
               <span className={`${styles.menuLabel} ${isActive ? styles.menuLabelActive : ""}`}>{item.label}</span>
 
-              <span className={`${styles.underline} ${isActive ? styles.underlineActive : ""}`} />
-
-              {isActive && (
-                <>
-                  <span className={styles.triangle} />
-                  <span className={styles.glow} />
-                </>
-              )}
+              <motion.span
+                className={styles.underline}
+                initial={{ width: "0%", left: "50%" }}
+                animate={isActive ? { width: "100%", left: "0%" } : { width: "0%", left: "50%" }}
+                transition={{ duration: 0.5 }}
+              />
+              <>
+                <motion.span
+                  className={styles.triangle}
+                  animate={{ opacity: isActive ? 1 : 0 }}
+                  transition={{ duration: 0.1 }}
+                />
+                <motion.span
+                  className={styles.glow}
+                  animate={{ opacity: isActive ? 1 : 0 }}
+                  transition={{ duration: 0.1 }}
+                />
+              </>
             </a>
           );
         })}
@@ -67,8 +64,13 @@ const BattlefieldSixMenu = ({ menuItems }: BattlefieldSixMenuProps) => {
         </div>
       </nav>
 
-      <div className={styles.rightBox}></div>
+      <div className={styles.rightBox}>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="80%" height="80%" fill="white">
+          <path d="M100.6 144a11.4 11.4 0 1 0 22.8 0 11.4 11.4 0 1 0-22.8 0zm288 0a11.4 11.4 0 1 0 22.8 0 11.4 11.4 0 1 0-22.8 0zm-320 32a11.4 11.4 0 1 0 22.8 0 11.4 11.4 0 1 0-22.8 0zm352 0a11.4 11.4 0 1 0 22.8 0 11.4 11.4 0 1 0-22.8 0zm-384 32a11.4 11.4 0 1 0 22.8 0 11.4 11.4 0 1 0-22.8 0zm416 0a11.4 11.4 0 1 0 22.8 0 11.4 11.4 0 1 0-22.8 0zm-448 32a11.4 11.4 0 1 0 22.8 0 11.4 11.4 0 1 0-22.8 0zm32 0a11.4 11.4 0 1 0 22.8 0 11.4 11.4 0 1 0-22.8 0zm32 0a11.4 11.4 0 1 0 22.8 0 11.4 11.4 0 1 0-22.8 0zm32 0a11.4 11.4 0 1 0 22.8 0 11.4 11.4 0 1 0-22.8 0zm32 0a11.4 11.4 0 1 0 22.8 0 11.4 11.4 0 1 0-22.8 0zm32 0a11.4 11.4 0 1 0 22.8 0 11.4 11.4 0 1 0-22.8 0zm32 0a11.4 11.4 0 1 0 22.8 0 11.4 11.4 0 1 0-22.8 0zm32 0a11.4 11.4 0 1 0 22.8 0 11.4 11.4 0 1 0-22.8 0zm32 0a11.4 11.4 0 1 0 22.8 0 11.4 11.4 0 1 0-22.8 0zm32 0a11.4 11.4 0 1 0 22.8 0 11.4 11.4 0 1 0-22.8 0zm32 0a11.4 11.4 0 1 0 22.8 0 11.4 11.4 0 1 0-22.8 0zm32 0a11.4 11.4 0 1 0 22.8 0 11.4 11.4 0 1 0-22.8 0zm32 0a11.4 11.4 0 1 0 22.8 0 11.4 11.4 0 1 0-22.8 0zm32 0a11.4 11.4 0 1 0 22.8 0 11.4 11.4 0 1 0-22.8 0zm32 0a11.4 11.4 0 1 0 22.8 0 11.4 11.4 0 1 0-22.8 0zm32 0a11.4 11.4 0 1 0 22.8 0 11.4 11.4 0 1 0-22.8 0zm-480 32a11.4 11.4 0 1 0 22.8 0 11.4 11.4 0 1 0-22.8 0zm32 0a11.4 11.4 0 1 0 22.8 0 11.4 11.4 0 1 0-22.8 0zm32 0a11.4 11.4 0 1 0 22.8 0 11.4 11.4 0 1 0-22.8 0zm32 0a11.4 11.4 0 1 0 22.8 0 11.4 11.4 0 1 0-22.8 0zm32 0a11.4 11.4 0 1 0 22.8 0 11.4 11.4 0 1 0-22.8 0zm32 0a11.4 11.4 0 1 0 22.8 0 11.4 11.4 0 1 0-22.8 0zm32 0a11.4 11.4 0 1 0 22.8 0 11.4 11.4 0 1 0-22.8 0zm96 0a11.4 11.4 0 1 0 22.8 0 11.4 11.4 0 1 0-22.8 0zm32 0a11.4 11.4 0 1 0 22.8 0 11.4 11.4 0 1 0-22.8 0zm32 0a11.4 11.4 0 1 0 22.8 0 11.4 11.4 0 1 0-22.8 0zm32 0a11.4 11.4 0 1 0 22.8 0 11.4 11.4 0 1 0-22.8 0zm32 0a11.4 11.4 0 1 0 22.8 0 11.4 11.4 0 1 0-22.8 0zm32 0a11.4 11.4 0 1 0 22.8 0 11.4 11.4 0 1 0-22.8 0zm32 0a11.4 11.4 0 1 0 22.8 0 11.4 11.4 0 1 0-22.8 0zm-480 32a11.4 11.4 0 1 0 22.8 0 11.4 11.4 0 1 0-22.8 0zm32 0a11.4 11.4 0 1 0 22.8 0 11.4 11.4 0 1 0-22.8 0zm32 0a11.4 11.4 0 1 0 22.8 0 11.4 11.4 0 1 0-22.8 0zm32 0a11.4 11.4 0 1 0 22.8 0 11.4 11.4 0 1 0-22.8 0zm32 0a11.4 11.4 0 1 0 22.8 0 11.4 11.4 0 1 0-22.8 0zm32 0a11.4 11.4 0 1 0 22.8 0 11.4 11.4 0 1 0-22.8 0zm32 0a11.4 11.4 0 1 0 22.8 0 11.4 11.4 0 1 0-22.8 0zm96 0a11.4 11.4 0 1 0 22.8 0 11.4 11.4 0 1 0-22.8 0zm32 0a11.4 11.4 0 1 0 22.8 0 11.4 11.4 0 1 0-22.8 0zm32 0a11.4 11.4 0 1 0 22.8 0 11.4 11.4 0 1 0-22.8 0zm32 0a11.4 11.4 0 1 0 22.8 0 11.4 11.4 0 1 0-22.8 0zm32 0a11.4 11.4 0 1 0 22.8 0 11.4 11.4 0 1 0-22.8 0zm32 0a11.4 11.4 0 1 0 22.8 0 11.4 11.4 0 1 0-22.8 0zm32 0a11.4 11.4 0 1 0 22.8 0 11.4 11.4 0 1 0-22.8 0zm-480 32a11.4 11.4 0 1 0 22.8 0 11.4 11.4 0 1 0-22.8 0zm32 0a11.4 11.4 0 1 0 22.8 0 11.4 11.4 0 1 0-22.8 0zm32 0a11.4 11.4 0 1 0 22.8 0 11.4 11.4 0 1 0-22.8 0zm32 0a11.4 11.4 0 1 0 22.8 0 11.4 11.4 0 1 0-22.8 0zm32 0a11.4 11.4 0 1 0 22.8 0 11.4 11.4 0 1 0-22.8 0zm32 0a11.4 11.4 0 1 0 22.8 0 11.4 11.4 0 1 0-22.8 0zm32 0a11.4 11.4 0 1 0 22.8 0 11.4 11.4 0 1 0-22.8 0zm96 0a11.4 11.4 0 1 0 22.8 0 11.4 11.4 0 1 0-22.8 0zm32 0a11.4 11.4 0 1 0 22.8 0 11.4 11.4 0 1 0-22.8 0zm32 0a11.4 11.4 0 1 0 22.8 0 11.4 11.4 0 1 0-22.8 0zm32 0a11.4 11.4 0 1 0 22.8 0 11.4 11.4 0 1 0-22.8 0zm32 0a11.4 11.4 0 1 0 22.8 0 11.4 11.4 0 1 0-22.8 0zm32 0a11.4 11.4 0 1 0 22.8 0 11.4 11.4 0 1 0-22.8 0zm32 0a11.4 11.4 0 1 0 22.8 0 11.4 11.4 0 1 0-22.8 0zm-416 32a11.4 11.4 0 1 0 22.8 0 11.4 11.4 0 1 0-22.8 0zm32 0a11.4 11.4 0 1 0 22.8 0 11.4 11.4 0 1 0-22.8 0zm32 0a11.4 11.4 0 1 0 22.8 0 11.4 11.4 0 1 0-22.8 0zm32 0a11.4 11.4 0 1 0 22.8 0 11.4 11.4 0 1 0-22.8 0zm160 0a11.4 11.4 0 1 0 22.8 0 11.4 11.4 0 1 0-22.8 0zm32 0a11.4 11.4 0 1 0 22.8 0 11.4 11.4 0 1 0-22.8 0zm32 0a11.4 11.4 0 1 0 22.8 0 11.4 11.4 0 1 0-22.8 0zm32 0a11.4 11.4 0 1 0 22.8 0 11.4 11.4 0 1 0-22.8 0z"></path>
+        </svg>
+      </div>
     </div>
+    // </AnimatePresence>
   );
 };
 
