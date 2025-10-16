@@ -1,5 +1,5 @@
 import type { StoryObj, Meta } from "@storybook/react";
-import BattlefieldSixMenu from "./BattlefieldSixMenu";
+import ContentWrapper from "./components/ContentWrapper";
 
 const menuItems = [
   { label: "PLAY", href: "/play" },
@@ -10,7 +10,7 @@ const menuItems = [
 
 export default {
   title: "Components/Menus/Battlefield 6 Menu",
-  component: BattlefieldSixMenu,
+  component: ContentWrapper,
   tags: ["!autodocs"],
   args: {
     menuItems: menuItems,
@@ -19,9 +19,9 @@ export default {
     layout: "fullscreen",
   },
   argTypes: {},
-} as Meta<typeof BattlefieldSixMenu>;
+} as Meta<typeof ContentWrapper>;
 
-type Story = StoryObj<typeof BattlefieldSixMenu>;
+type Story = StoryObj<typeof ContentWrapper>;
 
 export const Default: Story = {
   argTypes: {
