@@ -20,15 +20,20 @@ const ContentWrapper: FC<ContentWrapperProps> = ({ menuItems }) => {
     const section = document.getElementById(id);
     if (section) {
       animate(window.scrollY, section.offsetTop, {
-        duration: 0.4,
+        duration: 0.2,
         onUpdate: (latest) => window.scrollTo(0, latest),
-        ease: "easeInOut",
+        ease: "easeIn",
       });
     }
   };
 
   useEffect(() => {
+    let lastPress = 0;
+    const cooldown = 250;
     const handleKeyDown = (e: KeyboardEvent) => {
+      const now = Date.now();
+      if (now - lastPress < cooldown) return;
+      lastPress = now;
       const key = e.key.toLowerCase();
       if (key === "q") {
         setActiveIndex((prev) => {
