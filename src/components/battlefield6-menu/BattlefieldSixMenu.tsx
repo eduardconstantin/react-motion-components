@@ -1,5 +1,4 @@
 import styles from "./BattlefieldSixMenu.module.css";
-import { AnimatePresence, motion, animate } from "framer-motion";
 
 type MenuItem = {
   label: string;
@@ -14,7 +13,6 @@ interface BattlefieldSixMenuProps {
 
 const BattlefieldSixMenu = ({ menuItems, setActiveIndex, activeIndex }: BattlefieldSixMenuProps) => {
   return (
-    // <AnimatePresence mode="wait">
     <div className={styles.container}>
       <div className={styles.leftIcon}>ED</div>
 
@@ -36,25 +34,14 @@ const BattlefieldSixMenu = ({ menuItems, setActiveIndex, activeIndex }: Battlefi
               className={styles.menuButton}
             >
               <span className={`${styles.menuLabel} ${isActive ? styles.menuLabelActive : ""}`}>{item.label}</span>
+              <span className={`${styles.underline} ${isActive ? styles.underlineActive : ""}`} />
 
-              <motion.span
-                className={styles.underline}
-                initial={{ width: "0%", left: "50%" }}
-                animate={isActive ? { width: "100%", left: "0%" } : { width: "0%", left: "50%" }}
-                transition={{ duration: 0.5 }}
-              />
-              <>
-                <motion.span
-                  className={styles.triangle}
-                  animate={{ opacity: isActive ? 1 : 0 }}
-                  transition={{ duration: 0.1 }}
-                />
-                <motion.span
-                  className={styles.glow}
-                  animate={{ opacity: isActive ? 1 : 0 }}
-                  transition={{ duration: 0.1 }}
-                />
-              </>
+              {isActive && (
+                <>
+                  <span className={styles.triangle} />
+                  <span className={styles.glow} />
+                </>
+              )}
             </a>
           );
         })}
@@ -70,7 +57,6 @@ const BattlefieldSixMenu = ({ menuItems, setActiveIndex, activeIndex }: Battlefi
         </svg>
       </div>
     </div>
-    // </AnimatePresence>
   );
 };
 
