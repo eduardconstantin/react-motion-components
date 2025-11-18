@@ -72,7 +72,7 @@
   color: rgba(255, 255, 255, 0.9);
 }
 
-.menuLabelActive {
+.menuButton.menuActive .menuLabel {
   color: rgba(255, 255, 255, 0.9);
 }
 
@@ -91,12 +91,13 @@
   left: 0;
 }
 
-.underlineActive {
+.menuButton.menuActive .underline {
   width: 100%;
   left: 0;
 }
 
 .triangle {
+  opacity: 0;
   position: absolute;
   left: 0;
   right: 0;
@@ -123,7 +124,13 @@
   bottom: -7px;
 }
 
+.menuButton:hover .triangle,
+.menuButton.menuActive .triangle {
+  opacity: 1;
+}
+
 .glow {
+  opacity: 0;
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
@@ -135,6 +142,11 @@
   background-color: rgba(199, 210, 214, 0.9);
   border-radius: 9999px;
   filter: blur(15px);
+}
+
+.menuButton:hover .glow,
+.menuButton.menuActive .glow {
+  opacity: 1;
 }
 
 .rightBox {

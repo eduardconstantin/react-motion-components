@@ -31,17 +31,15 @@ const BattlefieldSixMenu = ({ menuItems, setActiveIndex, activeIndex }: Battlefi
                 e.preventDefault();
                 setActiveIndex(index);
               }}
-              className={styles.menuButton}
+              className={`${styles.menuButton} ${isActive ? styles.menuActive : ""}`}
             >
-              <span className={`${styles.menuLabel} ${isActive ? styles.menuLabelActive : ""}`}>{item.label}</span>
-              <span className={`${styles.underline} ${isActive ? styles.underlineActive : ""}`} />
+              <span className={styles.menuLabel}>{item.label}</span>
+              <span className={styles.underline} />
 
-              {isActive && (
-                <>
-                  <span className={styles.triangle} />
-                  <span className={styles.glow} />
-                </>
-              )}
+              <>
+                <span className={styles.triangle} />
+                <span className={styles.glow} />
+              </>
             </a>
           );
         })}
