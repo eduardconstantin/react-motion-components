@@ -17,16 +17,13 @@ const BattlefieldSixMenu = ({ menuItems, setActiveIndex, activeIndex }: Battlefi
       <div className={styles.leftIcon}>ED</div>
 
       <nav className={styles.nav}>
-        <div className={styles.keyHint}>
-          <p>Q</p>
-        </div>
+        <div className={styles.keyHint}>Q</div>
 
         {menuItems.map((item, index) => {
           const isActive = activeIndex === index;
           return (
-            <a
+            <button
               key={item.href}
-              href={item.href}
               onClick={(e) => {
                 e.preventDefault();
                 setActiveIndex(index);
@@ -36,17 +33,15 @@ const BattlefieldSixMenu = ({ menuItems, setActiveIndex, activeIndex }: Battlefi
               <span className={styles.menuLabel}>{item.label}</span>
               <span className={styles.underline} />
 
-              <>
+              <div className={styles.group}>
                 <span className={styles.triangle} />
                 <span className={styles.glow} />
-              </>
-            </a>
+              </div>
+            </button>
           );
         })}
 
-        <div className={styles.keyHint}>
-          <p>E</p>
-        </div>
+        <div className={styles.keyHint}>E</div>
       </nav>
 
       <div className={styles.rightBox}>

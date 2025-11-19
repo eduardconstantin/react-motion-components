@@ -1,4 +1,4 @@
-import { useState, useEffect, FC } from "react";
+import { useState, useEffect, useRef, FC } from "react";
 import { motion, animate } from "framer-motion";
 import BattlefieldSixMenu from "../BattlefieldSixMenu";
 import styles from "../BattlefieldSixMenu.module.css";
@@ -15,60 +15,52 @@ interface ContentWrapperProps {
 
 const ContentWrapper: FC<ContentWrapperProps> = ({ menuItems }) => {
   const [activeIndex, setActiveIndex] = useState(0);
+  const [isManualScrolling, setIsManualScrolling] = useState(false);
 
-  const scrollToSection = (id: string) => {
-    const section = document.getElementById(id);
-    if (section) {
-      animate(window.scrollY, section.offsetTop, {
-        duration: 0.2,
-        onUpdate: (latest) => window.scrollTo(0, latest),
-        ease: "easeIn",
-      });
-    }
+  const scrollToSection = (id: number) => {
+    const label = menuItems[id].label;
+    const section = document.getElementById(label);
+    if (!section) return;
+
+    setIsManualScrolling(true);
+
+    animate(window.scrollY, section.offsetTop, {
+      duration: 0.2,
+      onUpdate: (latest) => window.scrollTo(0, latest),
+      ease: "easeIn",
+    }).then(() => {
+      setIsManualScrolling(false);
+      setActiveIndex(id);
+    });
+  };
+
+  const handleViewportEnter = (index: number) => {
+    if (!isManualScrolling) setActiveIndex(index);
   };
 
   useEffect(() => {
-    let lastPress = 0;
-    const cooldown = 250;
     const handleKeyDown = (e: KeyboardEvent) => {
-      const now = Date.now();
-      if (now - lastPress < cooldown) return;
-      lastPress = now;
       const key = e.key.toLowerCase();
       if (key === "q") {
-        setActiveIndex((prev) => {
-          const next = prev === 0 ? menuItems.length - 1 : prev - 1;
-          scrollToSection(menuItems[next].label);
-          return next;
-        });
+        const next = activeIndex > 0 ? activeIndex - 1 : menuItems.length - 1;
+        scrollToSection(next);
       } else if (key === "e") {
-        setActiveIndex((prev) => {
-          const next = prev === menuItems.length - 1 ? 0 : prev + 1;
-          scrollToSection(menuItems[next].label);
-          return next;
-        });
+        const next = activeIndex < menuItems.length - 1 ? activeIndex + 1 : 0;
+        scrollToSection(next);
       }
     };
-
     window.addEventListener("keydown", handleKeyDown);
     return () => window.removeEventListener("keydown", handleKeyDown);
-  }, [menuItems]);
+  }, [activeIndex]);
 
   return (
     <div>
-      <BattlefieldSixMenu
-        menuItems={menuItems}
-        activeIndex={activeIndex}
-        setActiveIndex={(index) => {
-          setActiveIndex(index);
-          scrollToSection(menuItems[index].label);
-        }}
-      />
+      <BattlefieldSixMenu menuItems={menuItems} activeIndex={activeIndex} setActiveIndex={scrollToSection} />
       {menuItems.map((item, index) => (
         <motion.div
           key={item.label}
-          viewport={{ once: true, amount: 0.9 }}
-          onViewportEnter={(e) => setActiveIndex(index)}
+          viewport={{ amount: 0.9 }}
+          onViewportEnter={(e) => handleViewportEnter(index)}
           id={item.label}
           className={styles.section}
         >
