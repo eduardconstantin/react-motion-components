@@ -1,17 +1,8 @@
-import { useState, useEffect, useRef, FC } from "react";
+import { useState, useEffect, FC } from "react";
 import { motion, animate } from "framer-motion";
 import BattlefieldSixMenu from "../BattlefieldSixMenu";
 import styles from "../BattlefieldSixMenu.module.css";
-// import { ContentWrapperProps, Section } from "../GoomorphicMenu.d";
-
-type MenuItem = {
-  label: string;
-  href: string;
-};
-
-interface ContentWrapperProps {
-  menuItems: MenuItem[];
-}
+import { ContentWrapperProps } from "../BattlefieldSixMenu.d";
 
 const ContentWrapper: FC<ContentWrapperProps> = ({ menuItems }) => {
   const [activeIndex, setActiveIndex] = useState(0);

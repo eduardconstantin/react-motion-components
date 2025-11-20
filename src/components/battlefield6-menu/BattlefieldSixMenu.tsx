@@ -1,15 +1,5 @@
 import styles from "./BattlefieldSixMenu.module.css";
-
-type MenuItem = {
-  label: string;
-  href: string;
-};
-
-interface BattlefieldSixMenuProps {
-  menuItems: MenuItem[];
-  activeIndex: number;
-  setActiveIndex: (index: number) => void;
-}
+import { BattlefieldSixMenuProps } from "./BattlefieldSixMenu.d";
 
 const BattlefieldSixMenu = ({ menuItems, setActiveIndex, activeIndex }: BattlefieldSixMenuProps) => {
   return (
