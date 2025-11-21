@@ -19,12 +19,14 @@ library for React and documented with storybook, a tool for developing and testi
 ## 🧩 Components
 
 <div align="center">
-  <h3 align="center">Marvel Rivals Button</h3>
-  <img align="center" height="300px" src="https://cdn.dribbble.com/userupload/41513653/file/original-52765844e205d751460a3691e8eca994.gif"/> 
+  <h3 align="center">Battlefield 6 Menu</h3>
+  <img align="center" height="300px" src="https://cdn.dribbble.com/userupload/45779426/file/78e7b5e1daa22fbda49bafe75680c560.gif"/> 
   <br>
   <details align="center">
     <summary>Click for more</summary>
     <pre>
+      <h3 align="center">Marvel Rivals Button</h3>
+      <img align="center" height="200px" src="https://cdn.dribbble.com/userupload/41513653/file/original-52765844e205d751460a3691e8eca994.gif"/> 
       <h3 align="center">Goomorphic Card</h3>
       <img align="center" height="200px" src="https://cdn.dribbble.com/userupload/17062044/file/original-688c4d8e44a27791bb409b87f7b2314d.gif"/> 
       <h3 align="center">Goomorphic Menu</h3>
