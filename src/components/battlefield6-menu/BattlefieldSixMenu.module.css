@@ -1,0 +1,188 @@
+@import url("https://fonts.googleapis.com/css2?family=Quantico:ital,wght@0,400;0,700;1,400;1,700&&display=swap");
+
+.container {
+  display: flex;
+  width: 100%;
+  height: 60px;
+  place-content: space-between;
+  background-color: rgba(3, 12, 31, 0.5);
+  border-bottom: 1px solid rgba(156, 163, 175, 0.5);
+  font-family: "Quantico", serif;
+  font-weight: 500;
+  position: fixed;
+}
+
+.leftIcon {
+  aspect-ratio: 1 / 1;
+  height: 100%;
+  background-color: #f3f4f6;
+  display: grid;
+  place-items: center;
+  color: black;
+  font-size: 2rem;
+  font-weight: 700;
+  user-select: none;
+}
+
+.nav {
+  display: flex;
+  gap: 1.5rem;
+  justify-content: center;
+  align-items: center;
+  padding: 0 2rem;
+  user-select: none;
+}
+
+.keyHint {
+  background-color: rgba(255, 255, 255, 0.6);
+  border-radius: 2px;
+  width: 25px;
+  aspect-ratio: 1 / 1;
+  color: black;
+  display: inline-grid;
+  place-items: center;
+  text-align: center;
+}
+
+.menuButton {
+  font-family: "Quantico", serif;
+  font-size: 15px;
+  position: relative;
+  margin: 0;
+  background: none;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.menuButton:focus {
+  outline: none;
+}
+
+.menuLabel {
+  position: relative;
+  z-index: 10;
+  transition: color 0.1s;
+  color: #adadad;
+}
+
+.menuButton:hover .menuLabel {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.menuButton.menuActive .menuLabel {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.underline {
+  position: absolute;
+  bottom: -1px;
+  height: 3px;
+  background-color: #c7d2d6;
+  left: 0;
+  width: 100%;
+  opacity: 0;
+  transform: scaleX(0);
+  transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.1s ease;
+}
+
+.menuButton:hover .underline {
+  opacity: 1;
+  transform: scaleX(1);
+}
+
+.menuButton.menuActive .underline {
+  opacity: 1;
+  transform: scaleX(1);
+}
+
+.group {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.15s ease;
+}
+
+.menuButton:hover .group,
+.menuButton.menuActive .group {
+  opacity: 1;
+}
+
+.triangle {
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: auto;
+  bottom: -18px;
+  width: 9px;
+  height: 16px;
+  border-left: 2.5px solid transparent;
+  border-right: 2.5px solid transparent;
+  border-bottom: 2.5px solid #c7d2d6;
+}
+
+.triangle::before {
+  content: "";
+  position: absolute;
+  width: 7px;
+  height: 7px;
+  border-left: 2.5px solid #c7d2d6;
+  border-top: 2.5px solid #c7d2d6;
+  border-bottom: 2.5px solid transparent;
+  border-right: 2.5px solid transparent;
+  transform: rotate(45deg) skewY(8deg) skewX(8deg);
+  left: -1px;
+  bottom: -7px;
+}
+
+.glow {
+  opacity: 0;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 0;
+  bottom: 0;
+  margin: auto 0;
+  width: 100%;
+  height: 15px;
+  background-color: rgba(199, 210, 214, 0.9);
+  border-radius: 9999px;
+  filter: blur(15px);
+}
+
+.menuButton:hover .glow,
+.menuButton.menuActive .glow {
+  opacity: 1;
+}
+
+.rightBox {
+  aspect-ratio: 1 / 1;
+  height: 100%;
+  background-color: #4a795b;
+  display: grid;
+  place-items: center;
+}
+
+.section {
+  height: 100vh;
+  border-bottom: 1px solid #334155;
+  background: radial-gradient(circle at center, #1e293b, #0f172a);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+.section h1 {
+  font-family: "Quantico", serif;
+  font-size: 13rem;
+  color: rgb(175, 175, 175);
+  user-select: none;
+}
