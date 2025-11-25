@@ -85,18 +85,15 @@
   background-color: #c7d2d6;
   left: 0;
   width: 100%;
-  opacity: 0;
   transform: scaleX(0);
-  transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.1s ease;
+  transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .menuButton:hover .underline {
-  opacity: 1;
   transform: scaleX(1);
 }
 
 .menuButton.menuActive .underline {
-  opacity: 1;
   transform: scaleX(1);
 }
 
@@ -107,13 +104,7 @@
   width: 100%;
   height: 100%;
   pointer-events: none;
-  opacity: 0;
   transition: opacity 0.15s ease;
-}
-
-.menuButton:hover .group,
-.menuButton.menuActive .group {
-  opacity: 1;
 }
 
 .triangle {
