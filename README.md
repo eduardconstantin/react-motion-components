@@ -20,7 +20,7 @@ library for React and documented with storybook, a tool for developing and testi
 
 <div align="center">
   <h3 align="center">Battlefield 6 Menu</h3>
-  <img align="center" height="300px" src="https://cdn.dribbble.com/userupload/45779426/file/78e7b5e1daa22fbda49bafe75680c560.gif"/> 
+  <img align="center" height="300px" src="https://cdn.dribbble.com/userupload/45779426/file/db151f8aab64d919ac54821c4101fb71.gif"/> 
   <br>
   <details align="center">
     <summary>Click for more</summary>
